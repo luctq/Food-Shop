@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@
 <!-- Favicons -->
 <link rel="shortcut icon"
 	href="<c:url value="/assets/user/ico/favicon.ico" />">
-	<decorator:head />
+<decorator:head />
 </head>
 <body>
 	<!-- 
@@ -36,19 +37,38 @@
 			<div class="container">
 				<div class="alignR">
 					<div class="pull-left socialNw">
-						<a href="#"><span class="icon-twitter"></span></a> <a href="#"><span
+						<a href="#"><span class="icon-twitter"></span></a> <a
+							href="https://www.facebook.com/tranquocluc.luc"><span
 							class="icon-facebook"></span></a> <a href="#"><span
 							class="icon-youtube"></span></a> <a href="#"><span
 							class="icon-tumblr"></span></a>
 					</div>
 					<a class="active" href="index.html"> <span class="icon-home"></span>
 						Home
-					</a> <a href="#"><span class="icon-user"></span> My Account</a> <a
-						href="register.html"><span class="icon-edit"></span> Free
-						Register </a> <a href="contact.html"><span class="icon-envelope"></span>
-						Contact us</a> <a href="cart.html"><span
-						class="icon-shopping-cart"></span> 2 Item(s) - <span
-						class="badge badge-warning"> $448.42</span></a>
+					</a>
+					<c:if test="${ not empty LoginInfo }">
+						<a href="#"><span class="icon-user"></span> ${ LoginInfo.display_name }</a>
+						<a href="<c:url value="/dang-xuat"/>"><span class="icon-edit"></span>
+							Đăng xuất </a>
+					</c:if>
+					<c:if test="${ empty LoginInfo }">
+						<a href="<c:url value="/dang-ky"/>"><span class="icon-edit"></span>
+							Đăng ký </a>
+					</c:if>
+					<a href="contact.html"><span class="icon-envelope"></span>
+						Contact us</a>
+					<c:if test="${ not empty TotalQuantyCart }">
+						<a href="<c:url value="/gio-hang" />"> <span
+							class="icon-shopping-cart"></span> ${ TotalQuantyCart } Sản phẩm
+							- <span class="badge badge-warning"><fmt:formatNumber
+									type="number" groupingUsed="true" value="${ TotalPriceCart }" />₫</span></a>
+					</c:if>
+					<c:if test="${ empty TotalQuantyCart }">
+						<a href="<c:url value="/gio-hang" />"> <span
+							class="icon-shopping-cart"></span> 0 Sản phẩm
+							- <span class="badge badge-warning"><fmt:formatNumber
+									type="number" groupingUsed="true" value= "0" />₫</span></a>
+					</c:if>
 				</div>
 			</div>
 		</div>
@@ -93,5 +113,6 @@ Lower Header Section
 	<script
 		src="<c:url value="/assets/user/js/jquery.scrollTo-1.4.3.1-min.js"/>"></script>
 	<script src="<c:url value="/assets/user/js/shop.js"/>"></script>
+	<decorator:getProperty property="page.script"></decorator:getProperty>
 </body>
 </html>
