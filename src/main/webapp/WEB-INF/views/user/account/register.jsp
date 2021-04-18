@@ -117,13 +117,6 @@ Body Section
 			<div class="row">
 				<div class="span4">
 					<div class="well">
-						<c:if test="${ not empty status }">
-							<div class="alert alert-info  alert-dismissible">
-								<strong>Hi Tran!</strong> ${ status }
-								<button type="button" class="close" data-dismiss="alert"
-									aria-label="Close">&times;</button>
-							</div>
-						</c:if>
 						<h5>Đăng ký tài khoản</h5>
 						<br />
 						<form:form action="dang-ky" method="POST" modelAttribute="user">
@@ -162,6 +155,21 @@ Body Section
 								<button type="submit" class="btn block">Đăng kí thành
 									viên</button>
 							</div>
+							</br>
+							<c:if test="${ not empty status }">
+							<div class="alert alert-info  alert-dismissible">
+								<strong>Hi Tran!</strong> ${ status }
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">&times;</button>
+							</div>
+							</c:if>
+							<c:if test="${ not empty errorStatus }">
+							<div class="alert alert-info  alert-dismissible">
+								<strong>Hi Tran!</strong> ${ errorStatus }
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">&times;</button>
+							</div>
+						</c:if>
 						</form:form>
 					</div>
 				</div>
@@ -169,13 +177,6 @@ Body Section
 				<div class="span4">
 					<div class="well">
 						<h5>Đăng nhập hệ thống</h5>
-						<c:if test="${ not empty statusLogin }">
-							<div class="alert alert-info  alert-dismissible">
-								${ statusLogin }
-								<button type="button" class="close" data-dismiss="alert"
-									aria-label="Close">&times;</button>
-							</div>
-						</c:if>
 						<form:form action="dang-nhap" method="POST" modelAttribute="user">
 							<div class="control-group">
 								<label class="control-label" for="inputEmail">Email</label>
@@ -196,6 +197,14 @@ Body Section
 									<a href="#">Quên mật khẩu</a>
 								</div>
 							</div>
+							</br>
+							<c:if test="${ not empty statusLogin }">
+							<div class="alert alert-info  alert-dismissible">
+								${ statusLogin }
+								<button type="button" class="close" data-dismiss="alert"
+									aria-label="Close">&times;</button>
+							</div>
+						</c:if>
 						</form:form>
 					</div>
 				</div>

@@ -43,7 +43,7 @@
 							class="icon-youtube"></span></a> <a href="#"><span
 							class="icon-tumblr"></span></a>
 					</div>
-					<a class="active" href="index.html"> <span class="icon-home"></span>
+					<a class="active" href="trang-chu"> <span class="icon-home"></span>
 						Home
 					</a>
 					<c:if test="${ not empty LoginInfo }">

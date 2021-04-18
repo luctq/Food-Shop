@@ -36,7 +36,7 @@ public class UserController extends BaseController {
 		if (count > 0) {
 			_mvShare.addObject("status", "Đăng ký tài khoản thành công");
 		} else {
-			_mvShare.addObject("status", "Đăng ký tài khoản thất bại");
+			_mvShare.addObject("errorStatus", "Đăng ký tài khoản thất bại");
 		}
 		_mvShare.setViewName("user/account/register");
 		return _mvShare;
