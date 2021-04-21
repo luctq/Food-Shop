@@ -45,7 +45,6 @@ public class UserController extends BaseController {
 	public ModelAndView Login(HttpSession session, @ModelAttribute("user") Users user) {
 		user = accountService.CheckAccount(user);
 		if (user != null) {
-			
 			_mvShare.setViewName("redirect:trang-chu");
 			session.setAttribute("LoginInfo", user);
 			return _mvShare;

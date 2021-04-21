@@ -15,34 +15,34 @@
 			</div>
 			<ul class="sidebar-menu do-nicescrol">
 				<li class="sidebar-header">MENU ADMIN</li>
-				<li><a href="admin/homepage"> <i
+				<li><a href="trang-chu"> <i
 						class="zmdi zmdi-view-dashboard"></i> <span>Tổng quan</span>
 				</a></li>
 
-				<li><a href="admin/admin/list"> <i
+				<li><a href="quan-li-quan-tri"> <i
 						class="zmdi zmdi-account-box"></i> <span>Quản lí Admin</span>
 				</a></li>
-				<li><a href="admin/user/list"> <i
+				<li><a href="quan-li-nguoi-dung"> <i
 						class="zmdi zmdi-accounts"></i> <span>Quản lí User</span>
 				</a></li>
-				<li><a href="admin/cate/list"> <i class="zmdi zmdi-grid"></i>
+				<li><a href="the-loai"> <i class="zmdi zmdi-grid"></i>
 						<span>Chuyên Mục</span>
 				</a></li>
-				<li><a href="admin/product/list"> <i
+				<li><a href="danh-sach-san-pham"> <i
 						class="zmdi zmdi-widgets"></i> <span>Danh Sách Sản Phẩm</span>
 				</a></li>
-				<li><a href="admin/order/list"> <i
+				<li><a href="don-hang"> <i
 						class="zmdi zmdi-shopping-cart"></i> <span>Đơn Hàng</span>
 				</a></li>
 
-				<li><a href="admin/order/list-detail"> <i
+				<li><a href="chi-tiet-don-hang"> <i
 						class="zmdi zmdi-shopping-cart"></i> <span>Chi Tiết Đơn
 							Hàng</span>
 				</a></li>
-				<li><a href="admin/review/list"> <i
+				<li><a href="review"> <i
 						class="zmdi zmdi-calendar-check"></i> <span>Review</span>
 				</a></li>
-				<li><a href="admin/new/list"> <i class="icon-envelope-open"></i>
+				<li><a href="tin-tuc"> <i class="icon-envelope-open"></i>
 						<span>Tin tức</span>
 				</a></li>
 			</ul>
@@ -80,7 +80,7 @@
 
 							<li class="dropdown-divider"></li>
 							<li class="dropdown-item"><i class="icon-power mr-2"></i><a
-								href="admin/logout"> Đăng xuất</a></li>
+								href="dang-xuat"> Đăng xuất</a></li>
 						</ul></li>
 				</ul>
 			</nav>

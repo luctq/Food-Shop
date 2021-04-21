@@ -5,6 +5,11 @@ public class Admin {
 	private String username;
 	private String password;
 	private String name;
+	public Admin(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
 	public Admin() {
 		super();
 	}

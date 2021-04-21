@@ -4,7 +4,7 @@
 	prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,13 +79,13 @@
 					</div>
 					<div class="card-title text-uppercase text-center py-3">Đăng
 						nhập</div>
-					<form:form action="quan-tri-dang-nhap" method="POST" modelAttribute="admin">
+					<form action="dang-nhap-quan-tri" method="POST" modelAttribute="admin">
 						<div class="form-group">
 							<label for="exampleInputUsername" class="sr-only">Username</label>
 							<div class="position-relative has-icon-right">
 								<input type="text" id="exampleInputUsername"
 									class="form-control input-shadow" placeholder="Username"
-									name="admin-username" path="username" />
+									name= "username" />
 								<div class="form-control-position">
 									<i class="icon-user"></i>
 								</div>
@@ -94,9 +94,9 @@
 						<div class="form-group">
 							<label for="exampleInputPassword" class="sr-only">Password</label>
 							<div class="position-relative has-icon-right">
-								<form:input type="password" id="exampleInputPassword"
+								<input type="password" id="exampleInputPassword"
 									class="form-control input-shadow" placeholder="Password"
-									name="admin-password" path="password" />
+									name="password" />
 								<div class="form-control-position">
 									<i class="icon-lock"></i>
 								</div>
@@ -113,7 +113,7 @@
 						</div>
 						<button type="submit" class="btn btn-light btn-block">Đăng
 							nhập</button>
-					</form:form>
+					</form>
 				</div>
 			</div>
 

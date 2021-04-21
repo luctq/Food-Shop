@@ -9,9 +9,10 @@
 		<pattern>/</pattern>
 	</decorator>
 	<decorator name="admin" page="admin.jsp">
-		<pattern>/quan-tri/trang-chu</pattern>
+		<pattern>/quan-tri/*</pattern>
 	</decorator>
 	<excludes>
+        <pattern>/quan-tri/dang-nhap</pattern>
         <pattern>/quan-tri</pattern>
     </excludes>
 </decorators>

@@ -1,6 +1,6 @@
-package DiamonShop.Entity.User;
+package DiamonShop.Entity.Admin;
 
-public class Categorys {
+public class AdminCategorys {
 	private int id;
 	private String name;
 	private String descripttion;
@@ -11,7 +11,7 @@ public class Categorys {
 	public void setParent_id(int parent_id) {
 		this.parent_id = parent_id;
 	}
-	public Categorys() {
+	public AdminCategorys() {
 		super();
 	}
 	public int getId() {

@@ -11,7 +11,7 @@
                 <div class="card-title">Sửa chuyên mục</div>
                 <hr>
           	
-	                <form action="admin/cate/edit" method="post">
+	                <form action="cap-nhat-the-loai" method="post" modelAttribute="category">
 	                  <div class="form-group">
 	                    <label for="input-1">ID</label>
 	                    <input type="text" class="form-control" readonly id="input-1" placeholder="ID" name="id" value="${catelist.id}">
@@ -30,7 +30,7 @@
 		                  </div>
 		               </div>
 	                   <div class="form-footer">
-	                      <button class="btn btn-danger"><a href="admin/cate/list">Hủy</a></button>
+	                      <button class="btn btn-danger"><a href="huy-sua-the-loai">Hủy</a></button>
                          
                      		<button type="submit" class="btn btn-success">Cập nhật</button>
 	                   </div> 

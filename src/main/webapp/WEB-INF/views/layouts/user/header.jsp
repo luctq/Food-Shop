@@ -69,10 +69,10 @@ Navigation Bar Section
 							<div class="dropdown-menu">
 							<form class="form-horizontal loginFrm" action="dang-nhap" method ="POST">  
 									<div class="control-group">
-									<input type="email" class="span3" id="inputPassword" placeholder="Mời nhập email" />
+									<input type="email" class="span3" id="inputPassword" placeholder="Mời nhập email" name = "user" />
 									</div>
 									<div class="control-group">
-									<input type="password" class="span3" id="inputPassword" placeholder="Mời nhập password" />
+									<input type="password" class="span3" id="inputPassword" placeholder="Mời nhập password" name = "password" />
 									</div>
 									<div class="control-group">
 										<label class="checkbox"> <input type="checkbox">
