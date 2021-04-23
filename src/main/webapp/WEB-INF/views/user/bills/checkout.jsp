@@ -47,9 +47,8 @@ Body Section
 			<div class="well well-small alert alert-warning cntr">
 				<h2>50% Discount</h2>
 				<p>
-					only valid for online order. <br>
-					<br>
-					<a class="defaultBtn" href="#">Click here </a>
+					only valid for online order. <br> <br> <a
+						class="defaultBtn" href="#">Click here </a>
 				</p>
 			</div>
 			<div class="well well-small">
@@ -58,7 +57,7 @@ Body Section
 			</div>
 
 			<a class="shopBtn btn-block" href="#">Upcoming products <br>
-			<small>Click to view</small></a> <br> <br>
+				<small>Click to view</small></a> <br> <br>
 			<ul class="nav nav-list promowrapper">
 				<li>
 					<div class="thumbnail">
@@ -105,8 +104,7 @@ Body Section
 					</div>
 				</li>
 			</ul>
-
-		</div>
+			</div>
 		<div class="span9">
 			<ul class="breadcrumb">
 				<li><a href="index.html">Home</a> <span class="divider">/</span></li>
@@ -116,47 +114,52 @@ Body Section
 			<hr class="soft" />
 
 			<div class="row">
-				<div class="span4">
+				<div  class="span9">
 					<div class="well">
 						<br />
-						<form class="form-horizontal">
-							<h3>Thanh toán đơn hàng</h3>
-							<div class="control-group">
-								<label class="control-label">Fiels label <sup>*</sup></label>
-								<div class="controls">
-									<input type="text" placeholder=" Field name">
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Fiels label <sup>*</sup></label>
-								<div class="controls">
-									<input type="text" placeholder=" Field name">
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Fiels label <sup>*</sup></label>
-								<div class="controls">
-									<input type="text" placeholder=" Field name">
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Fiels label <sup>*</sup></label>
-								<div class="controls">
-									<textarea></textarea>
-								</div>
-							</div>
-							<div class="control-group">
-								<div class="controls">
-									<input type="submit" name="submitAccount" value="Register"
-										class="shopBtn exclusive">
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="span1">&nbsp;</div>
+						<form:form action="checkout" method="POST" modelAttribute="bills" class="form-horizontal">
+		                    <h3>Thanh toán đơn hàng</h3>
+		                    <div class="control-group">
+			                    <label class="control-label">Họ tên <sup>*</sup></label>
+			                    <div class="controls">
+			                      <input type="text" placeholder="Mời nhập họ tên" path="display_name"/>
+			                    </div>
+		                    </div>
+		                    <div class="control-group">
+			                    <label class="control-label">Email <sup>*</sup></label>
+			                    <div class="controls">
+			                        <form:input type="text" class="span3" placeholder="Mời nhập email" path="user"/>
+			                    </div>
+		                    </div>
+		                    <div class="control-group">
+			                    <label class="control-label">Liên hệ <sup>*</sup></label>
+			                    <div class="controls">
+			                        <form:input type="text" class="span3" placeholder="Mời nhập số điện thoại" path="phone" />
+			                    </div>
+		                    </div>
+		                    <div class="control-group">
+			                    <label class="control-label">Địa chỉ <sup>*</sup></label>
+			                    <div class="controls">
+			                        <form:textarea path="address" rows="5" cols="30" />
+			                    </div>
+		                    </div>
+	                        <div class="control-group">
+	                            <label class="control-label">Ghi chú <sup>*</sup></label>
+	                            <div class="controls">
+	                                <form:textarea path="note" rows="5" cols="30" />
+	                            </div>
+	                        </div>        
+	                        <div class="control-group">    
+		                        <div class="controls">
+		                            <input type="submit" name="submitAccount" value="Đặt hàng" 
+		                                class="shopBtn exclusive">
+		                        </div>
+	                        </div>
+	                    </form:form>
+	                </div>
+                </div>
+                <div class="span1">&nbsp;</div>
 			</div>
-
 		</div>
 	</div>
 </body>
