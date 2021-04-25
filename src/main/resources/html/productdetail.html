@@ -7,7 +7,7 @@
 	
 	<body> 
 		<header class="head-1">
-			<a href="#" class="logo">Food<span>.</span></a>
+			<a href="index.html" class="logo">Food<span>.</span></a>
 			<div class="menuToggle" onclick="toggleMenu();"></div>
 			<ul class="navigation">
 				<li><a href="index.html#banner" onclick="toggleMenu();">Home</a></li>
@@ -17,13 +17,19 @@
 				<li><a href="index.html#danhgia" onclick="toggleMenu();">Đánh giá</a></li>
 				<li><a href="index.html#contact" onclick="toggleMenu();">Liên hệ</a></li>
 				<li><a href="login.html">Account</a></li>
-				<li><a href="#">Gio hang</a></li>
+				<li><a href="cart.html">Gio hang</a></li>
 			</ul>
 		</header>
 
-        <!-------1 san pham chi tiet------->
+        <div class="container underline">
+            <div class="row-1 row-2">
+                <h2>Chi tiết về món ăn</h2>
+            </div>
+        </div>
+
+        <!-------chi tiet 1 san pham------->
         <div class="container single-product">
-            <div class="row-2 row-3">
+            <div class="row-3">
                 <div class="col-2">
                     <img src="images/banhcan.jpg" alt="Banh can" width="100%" height="80%" id="productImg">
                     <div class="small-img-row">
@@ -68,7 +74,7 @@
             <div class="row-2 row-4">
                 <div class="row-1">
                     <div class="col-1">
-                        <img src="images/banhxeo.jpg">
+                        <a href="productdetail.html"><img src="images/banhxeo.jpg"></a>
                         <h4>Bánh xèo</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -80,7 +86,7 @@
                         <p>60.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/phoga.jpg">
+                        <a href="productdetail.html"><img src="images/phoga.jpg"></a>
                         <h4>Phở gà</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -92,7 +98,7 @@
                         <p>50.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/baotuhamtieu.jpg">
+                        <a href="productdetail.html"><img src="images/baotuhamtieu.jpg"></a>
                         <h4>Bao tử hầm tiêu</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -104,7 +110,7 @@
                         <p>70.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/cakho.jpg">
+                        <a href="productdetail.html"><img src="images/cakho.jpg"></a>
                         <h4>Bánh xèo</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -118,7 +124,7 @@
                 </div>
                 <div class="row-1">
                     <div class="col-1">
-                        <img src="images/bundaumamtom.jpg">
+                        <a href="productdetail.html"><img src="images/bundaumamtom.jpg"></a>
                         <h4>Bún đậu mắm tôm</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -130,7 +136,7 @@
                         <p>55.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/nemnuong.jpg">
+                        <a href="productdetail.html"><img src="images/nemnuong.jpg"></a>
                         <h4>Nem nướng</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -142,7 +148,7 @@
                         <p>45.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/taiheosotthai.jpg">
+                        <a href="productdetail.html"><img src="images/taiheosotthai.jpg"></a>
                         <h4>Tai heo sốt thái</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -154,7 +160,7 @@
                         <p>60.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/gacuonladua.jpg">
+                        <a href="productdetail.html"><img src="images/gacuonladua.jpg"></a>
                         <h4>gà cuốn lá dứa</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -166,63 +172,13 @@
                         <p>80.000đ</p>
                     </div>
                 </div>
-                <div class="row-1">
-                    <div class="col-1">
-                        <img src="images/canhkhoqua.jpg">
-                        <h4>Canh khổ qua</h4>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                        <p>35.000đ</p>
-                    </div>
-                    <div class="col-1">
-                        <img src="images/chaolong.jpg">
-                        <h4>Cháo lòng</h4>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                        <p>30.000đ</p>
-                    </div>
-                    <div class="col-1">
-                        <img src="images/comgahoian.jpg">
-                        <h4>Cơm gà Hội An</h4>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                        <p>60.000đ</p>
-                    </div>
-                    <div class="col-1">
-                        <img src="images/canhngheunaukhe.jpg">
-                        <h4>Canh nghêu nấu khế</h4>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                        <p>55.000đ</p>
-                    </div>
-                </div>
             </div>
 
             <div class="page-btn">
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
+                <a href="products.html"><span>1</span></a>
+                <a href="products.html"><span>2</span></a>
+                <a href="products.html"><span>3</span></a>
+                <a href="products.html"><span>4</span></a>
                 <span>&#8594;</span>
             </div>
         </div>

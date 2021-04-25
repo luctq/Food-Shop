@@ -429,7 +429,7 @@ h4
 .row-2
 {
 	/* justify-content: space-between; */
-	margin: 150px auto 50px;
+	margin: 130px auto 50px;
 }
 select
 {
@@ -498,11 +498,32 @@ select:focus
 	font-weight: 900;
 	font-size: 50px;
 }
+.underline ::after
+{
+	content: '';
+    background: #ff523b;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -8;
+    left: 33px;
+    transition: 0.5s;
+}
+.underline .row-2
+{
+	padding-left: 30px;
+	margin-bottom: 0;
+}
+.single-product {
+	margin-bottom: 90px;
+}
 .row-3
 {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
+	margin-bottom: 0px;
 }
 .single-product input
 {
@@ -532,10 +553,12 @@ input:focus
 {
 	flex-basis: 24%;
 	cursor: pointer;
-	height: 120px;
+	height: 90px;
+    width: 70px;
 }
 .small-img-col img{
 	height: 100%;
+	width: 100%;
 }
 /*--------page cart ------*/
 .container.cart-page
