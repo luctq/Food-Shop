@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 *
 {
 	margin: 0;
@@ -6,6 +7,7 @@
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
+	transition: 0.5s;
 }
 p
 {
@@ -445,7 +447,7 @@ select:focus
 {
 	margin: 0 auto 80px;
 }
-.page-btn span 
+.page-btn span
 {
 	display: inline-block;
 	border: 1px solid #ff523b;
@@ -461,6 +463,15 @@ select:focus
 	background: #ff523b;
 }
 /* ------- cho page product detail--- */
+.container .row-1 a 
+{
+	padding: 10px;
+	text-decoration: none;
+}
+.container a p {
+	font-weight: 500;
+	color: #cf6502;
+}
 .head-1 .logo, .head-1 .navigation li a{
 	color: rgb(0, 0, 0);
 }
@@ -469,20 +480,26 @@ select:focus
 	padding: 15px 90px;
 }
 .btn-1:hover {
-	background: #d69d00;
+	background: #f0d067;
 	letter-spacing: 2px;
 }
 .col-2 img 
 {
 	padding: 0;
+	width: 100%;
+	height: 100%;
 }
 .col-2 {
-	padding: 20px;
-	justify-content: space-between;
-	margin-left: 2%;
-	height: 500px;
-	width: 450px;
-	margin-top: 70px;
+    padding: 20px;
+    justify-content: space-between;
+    margin-left: 2%;
+    height: 400px;
+    width: 340px;
+    margin-top: 70px;
+}
+.col-2.other
+{
+	width: 600px;
 }
 .col-2 p, .col-2 a, .col-2 h3, .col-2 input
 {
@@ -561,9 +578,14 @@ input:focus
 	width: 100%;
 }
 /*--------page cart ------*/
-.container.cart-page
+.container.cart-page, .profile
 {
 	margin: 150px auto;
+}
+.cart-page .btn {
+	float: right;
+	border-radius: 5px;
+	background: #b7b910;
 }
 table
 {
@@ -588,6 +610,9 @@ th
 	color: #fff;
 	background: #b48504;
 	font-weight: normal;
+}
+.checkout .center, .checkout .pay {
+	text-align: center;
 }
 td 
 {
@@ -617,6 +642,362 @@ td:last-child
 {
 	text-align: right;
 }
+
+/*--------mục đánh giá ------*/
+.categories
+{
+	display: flex;
+	margin: 30px 0 40px;
+	background: rgb(252, 244, 230);
+	padding: 10px;
+	padding-left: 30px;
+}
+.comment
+{
+	margin: 40px;
+	transition: 0.5s;
+}
+.comment .title
+{
+	text-align: initial;
+	align-items: initial;
+	justify-content: left;
+	text-transform: uppercase;
+	margin: 0 10px
+}
+.categories .col{
+	margin-right: 120px;
+	
+}
+.categories .col 
+{
+	font-size: 25px;
+}
+.comment span {
+	display: inline-block;
+	border: 1.4px solid #ffab0f;
+	margin-left: 10px;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+	padding: 0 10px;
+	margin-top: 10px;
+}
+.comment span:hover
+{
+	background: #ffab0f;
+}
+.comment img, .profile img
+{
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;
+}
+.cus-comment
+{
+	display: flex;
+	padding-bottom: 30px;
+	margin: 10px 20px;
+	border-bottom: 1px solid #adb5bd;
+	transition: 0.5s;
+}
+.comment-after span:last-child {
+	background: #ffab0f;
+	border-radius: 5px;
+	color: #555;
+	transition: 0.5s;
+}
+.add-cmt
+{
+	display: none;
+}
+.add-cmt.active {
+	display: initial;
+	display: flex;
+	border-bottom: none;
+	margin-top: 50px;
+}
+.cus-comment .cmt 
+{
+	width: calc(100% - 70px);
+}
+.cus-comment input
+{
+	width: 100%;
+	min-height: 90px;
+	margin-top: 10px;
+	text-indent: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.cus-comment textarea {
+	width: 100%;
+	min-height: 90px;
+	padding: 10px;
+	border: 2px solid #b7b910;
+}
+.cus-comment button {
+	background: #fff;
+	width: 80px;
+	height: 40px;
+	border: 2px solid #d4d802;
+	font-size: 15px;
+	margin-top: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.6s;
+}
+.cus-comment button:hover {
+	background: #d4d802;
+}
+.rating-1 {
+	font-size: 35px; 
+}
+.rating-1 input {
+	display: none;
+}
+.rating-1 label::before
+{
+	margin: 5px;
+	font-size: 1em;
+	display: inline-block;
+	font-family: FontAwesome;
+	content: "\f005";
+}
+.rating-1 .full {
+	color: #afafaf;
+	float: right;
+}
+.rating-1 input:checked~label, .rating-1:not(:checked) label:hover,
+.rating-1:not(:checked) label:hover~label {
+	color: #ff523b;
+}
+/*--------xác nhận thanh toán------*/
+.checkout
+{
+	display: flex;
+	flex-direction: row;
+	margin-top: 50px;
+}
+.checkout .container {
+	/* background: #f1f1f1; */
+	padding: 30px;
+	box-shadow: 0 5px 35px rgba(0, 0, 0, 0.08);
+}
+.order-inf form {
+	display: flex;
+	flex-direction: column;
+}
+.order-inf form div {
+	background: rgb(223, 192, 91);
+	display: flex;
+	flex-direction: column;
+	padding: 20px 30px;
+}
+.order-inf form label {
+	color: #555;
+}
+.order-inf input, .order-inf textarea {
+	/* width: 100%; */
+	border:1px solid #7e7e7e;
+	height: 40px;
+}
+.order-inf textarea {
+	height: 80px;
+	margin: 10px 0;
+}
+.order-inf {
+	padding: 20px;
+	box-shadow: 0 5px 35px rgba(0, 0, 0, 0.08);
+	width: 100%;
+	margin-left: 10px;
+	margin-bottom: 140px;
+}
+.order-inf input, .order-inf textarea {
+	padding: 10px;
+	margin: 10px 0;
+	background: #ffffff;
+	border-style: none;
+	border-radius: 5px;
+}
+.order-inf h2, .cart-page h2 {
+	color: #555;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+.order-inf button {
+	background: #aa8025;
+	border-radius: 5px;
+	width: fit-content;
+	text-align: center;
+	border-style: none;
+	padding: 10px;
+	font-size: 17px;
+	cursor: pointer;
+	color: #fff;
+	float: inline-end;
+	margin-top: 30px;
+}
+.order-inf button:hover {
+	color: #555;
+}
+
+/*--------user profile------*/
+.profile {
+	display: flex;
+	margin: 100px 80px;
+	min-height: 360px;
+	justify-content: center;
+}
+.profile img {
+	width: 90px;
+	height: 90px;
+	border: 5px solid #fff;
+}
+.profile .imgB {
+	background: darkkhaki;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 30px 30px 50px;
+}
+.colunm-1 {
+	display: flex;
+	width: 300px;
+	flex-direction: column;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.09);
+}
+.colunm-1 li {
+	list-style: none;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 10px 20px;
+}
+.colunm-1 li:hover {
+	background: #dfdfdf;
+}
+.colunm-1 a {
+	text-decoration: none;
+	color: #555;
+}
+.colunm-1 p {
+	font-weight: 500;
+	color: #fff;
+}
+.colunm-1 .menu-1.active, .colunm-1 .menu-2.active{
+	background: #dfdfdf;
+	border-left: 4px solid #b48504;
+	transition: 0.2s;
+}
+.colunm-2 {
+	position: relative;
+	margin: 0 30px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.09);
+	min-width: 830px;
+    min-height: 450px;
+	padding: 30px 0;
+	display: flex;
+	overflow: hidden;
+	justify-content: space-between;
+}
+.for-menu-1, .for-menu-2 {
+	justify-content: center;
+	width: 770px;
+	margin: 0 30px;
+	position: absolute;
+}
+.for-menu-2 {
+	left: 831px;
+}
+.for-menu-1.active {
+	left: 0;	
+}
+.for-menu-1 {
+	left: 831px;
+}
+.for-menu-2.active {
+	left: 0;
+}
+.formB {
+	margin-top: 30px;
+}
+.colunm-2 .title {
+	padding: 10px 0;
+	border-bottom: 0.1px solid #aaaaaad5;
+	background: #c9b755d8;	
+}
+.formB form .row-01 {
+	margin: 25px;
+	justify-content: space-between;
+	display: flex;
+}
+.formB form .label {
+	width: 150px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.formB form label {
+	text-align: right;
+}
+.formB form input {
+	font-size: 17px;
+	float: left;
+	min-width: 500px;
+	height: 40px;
+	padding-left: 20px;
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	border: 0.1px solid #c9b755d8;
+}
+.formB form .input {
+	left: 0;
+	width: 100%;
+	margin-left: 20px;
+}
+.formB form button {
+	width: 90px;
+	height: fit-content;
+	background: #c9b755d8;
+	border: 0.1px solid #c9b755d8;
+	color: #fff;
+	font-size: 15px;
+	padding: 10px 0;
+	margin-left: 150px;
+	cursor: pointer;
+}
+
+/*--------tìm kiếm------*/
+.search {
+	background: #cfc45d;
+	min-height: 500px;
+	padding: 200px 70px;
+	margin-bottom: 50px;
+}
+.searchBx {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-top: 50px;
+}
+.searchBx input {
+	border-radius: 30px;
+	border-style: none;
+	position: absolute;
+	padding: 20px;
+	height: 50px;
+	width: 400px;
+}
+
+
+
 
 
 @media (max-width: 991px)
@@ -736,5 +1117,15 @@ td:last-child
 	.cart-info p
 	{
 		display: none;
+	}
+	.comment {
+		margin: 20px;
+	}
+	.checkout
+	{
+		flex-direction: column;
+	}
+	.order-inf {
+		margin: 10px 0 90px;
 	}
 }
