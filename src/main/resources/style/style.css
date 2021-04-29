@@ -462,10 +462,23 @@ select:focus
 {
 	background: #ff523b;
 }
+.col-1-end {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.col-1-end button {
+	right: 0;
+	border-style: none;
+	color: #fff;
+	background: #b48504;
+	height: 40px;
+	padding: 5px;
+}
 /* ------- cho page product detail--- */
 .container .row-1 a 
 {
-	padding: 10px;
+	/* padding: 10px; */
 	text-decoration: none;
 }
 .container a p {
@@ -980,6 +993,10 @@ td:last-child
 	padding: 200px 70px;
 	margin-bottom: 50px;
 }
+.search h2 {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
 .searchBx {
 	display: flex;
 	justify-content: center;
@@ -995,10 +1012,6 @@ td:last-child
 	height: 50px;
 	width: 400px;
 }
-
-
-
-
 
 @media (max-width: 991px)
 {
