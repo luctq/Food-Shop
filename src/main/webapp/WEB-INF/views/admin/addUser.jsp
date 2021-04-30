@@ -10,27 +10,27 @@
               <div class="card-body">
                 <div class="card-title">Thêm User</div>
                 <hr>
-                <form action="admin/user/add" method="post">
+                <form action="them-user" method="post">
                 
                   <div class="form-group">
                     <label for="input-1">Họ tên</label>
-                    <input type="text" class="form-control" id="input-2" placeholder="Nhập họ tên" name="user-name">
+                    <input type="text" class="form-control" id="input-2" placeholder="Nhập họ tên" name="display_name">
                   </div>
                   <div class="form-group">
                     <label for="input-2">Email</label>
-                    <input type="text" class="form-control" id="input-3" placeholder="Nhập địa chỉ Email" name="user-email">
+                    <input type="text" class="form-control" id="input-3" placeholder="Nhập địa chỉ Email" name="user">
                   </div>
                   <div class="form-group">
                     <label for="input-3">Số Điện Thoại</label>
-                    <input type="text" class="form-control" id="input-4" placeholder="Nhập số điện thoại" name="user-phone">
+                    <input type="text" class="form-control" id="input-4" placeholder="Nhập số điện thoại" name="phone">
                   </div>
                   <div class="form-group">
                     <label for="input-3">UserName</label>
-                    <input type="text" class="form-control" id="input-5" placeholder="Nhập User Name" name="user-userName">
+                    <input type="text" class="form-control" id="input-5" placeholder="Nhập User Name" name="username">
                   </div>
                   <div class="form-group">
                     <label for="input-4">Mật khẩu</label>
-                    <input type="password" class="form-control" id="myinput" placeholder="Nhập mật khẩu" name="user-password">
+                    <input type="password" class="form-control" id="myinput" placeholder="Nhập mật khẩu" name="password">
 					<input type="checkbox" onclick="myFunction1()">Hiển thị mật khẩu
 					<script>function myFunction1() {
                     	  var x = document.getElementById("myinput");
@@ -47,6 +47,7 @@
                     <input type="date" class="form-control" id="the-date" placeholder="Ngày tạo" name="user-created">
                   </div>
                   <div class="form-group">
+                   <button class="btn btn-danger"><i class="fa fa-times"></i><a href="huy-them-nguoi-dung">Hủy</a></button>
                     <button type="submit" class="btn btn-light px-5"><i class="icon-lock"></i> Đăng ký</button>
                   </div>
                 </form>
