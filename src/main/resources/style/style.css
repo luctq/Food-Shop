@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 *
 {
 	margin: 0;
@@ -7,7 +8,7 @@
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
-	transition: 0.5s;
+	transition: all 0.5s;
 }
 p
 {
@@ -379,7 +380,7 @@ section
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
-.container 
+.container login-
 {
 	max-width: 1080px;
 	margin: auto;
@@ -1011,6 +1012,218 @@ td:last-child
 	padding: 20px;
 	height: 50px;
 	width: 400px;
+}
+/*--------login and sign up------*/
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0, 0, 0, 0.8);
+	box-sizing: border-box;
+	top: 0;
+	display: none;
+	transition: all 0.5s;
+}
+.user i {
+	position: absolute;
+	right: 30px;
+	font-size: 30px;
+	top: 20px;
+	font-weight: 100;
+	cursor: pointer;
+}
+.login 
+{
+	opacity: 1;
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	transition: 0.5s;
+}
+
+.login img
+{
+	width: 400px;
+	height: 500px;
+	top: 0;
+	position: absolute;
+	left: 0;
+	object-fit: cover;
+}
+.login .login-container
+{
+	position: relative;
+	width: 800px;
+	height: 500px;
+	background-color: #fff;
+	box-shadow: 0 15px 50px rgba(207, 156, 156, 0.1);
+	overflow: hidden;
+}
+.login .login-container .user
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+.login .login-container .user .imgBx
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	transition: 0.5s;
+}
+.login .formBx
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	transition: 0.5s;
+}
+.login .formBx h2
+{
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 10px;
+	color: #555;
+}
+.login .formBx input
+{
+	width: 100%;
+	height: 40px;
+	padding: 10px;
+	background: #f1c778;
+	color: rgb(27, 20, 128);
+	border: none;
+	outline: none;
+	box-shadow: none;
+	font-size: 14px;
+	margin: 10px 0;
+	letter-spacing: 1px;
+	font-weight: 400;
+}
+.login .formBx input[type="submit"]
+{
+	width: 140px;
+	background: #d1750bc9;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	transition: 0.5s;
+}
+.login .signupBX .formBx input[type="submit"]
+{
+	background: #f35a1e;
+}
+.login .formBx .signup
+{
+	position: relative;
+	margin-top: 20px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	color: #5a4e37;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.login .formBx .signup a
+{
+	font-weight: 400;
+	text-decoration: none;
+	color: #ce8806;
+}
+
+.login .login-container .signupBX
+{
+	pointer-events: none;
+}
+
+.login .login-container.active .signupBX
+{
+	pointer-events: initial;
+}
+
+.login .login-container .signupBX .formBx 
+{
+	top: 100%;
+}
+.login .login-container.active .signupBX .formBx 
+{
+	top: 0;
+}
+.login .login-container .signupBX .imgBx 
+{
+	top: -100%;
+	transition: 0.5s;
+}
+
+.login .login-container.active .signupBX .imgBx 
+{
+	top: 0;
+}
+
+.login .login-container .signinBX
+{
+	pointer-events: initial;
+}
+
+.login .login-container.active .signinBX
+{
+	pointer-events: none;
+}
+
+.login .login-container .signinBX .formBx 
+{
+	top: 0;
+}
+.login .login-container.active .signinBX .formBx 
+{
+	top: 100%;
+}
+.login .login-container .signinBX .imgBx 
+{
+	top: 0;
+	transition: 0.5s;
+}
+
+.login .login-container.active .signinBX .imgBx 
+{
+	top: -100%;
+}
+
+@media (max-width: 991px)
+{
+	.login .login-container
+	{
+		max-width: 400px;
+	}
+	.login .login-container .imgBx
+	{
+		display: none;
+	}
+	.login .login-container .user .formBx
+	{
+		width: 100%;
+	}
+	.login .login-container.active .signinBX .formBx
+	{
+		top:-100.login
+	}
 }
 
 @media (max-width: 991px)
