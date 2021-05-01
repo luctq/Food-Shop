@@ -1,8 +1,18 @@
 <decorators defaultdir="/WEB-INF/views/layouts">
+	<decorator name="user" page="user.jsp">
+		<pattern>/gio-hang</pattern>
+		<pattern>/san-pham/*</pattern>
+		<pattern>/chi-tiet-san-pham/*</pattern>
+		<pattern>/dang-nhap</pattern>
+		<pattern>/dang-ky</pattern>
+		<pattern>/dang-xuat</pattern>
+		<pattern>/</pattern>
+	</decorator>
 	<decorator name="admin" page="admin.jsp">
 		<pattern>/quan-tri/*</pattern>
 	</decorator>
 	<excludes>
         <pattern>/quan-tri/dang-nhap</pattern>
+        <pattern>/quan-tri</pattern>
     </excludes>
 </decorators>

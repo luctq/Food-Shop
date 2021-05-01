@@ -2,26 +2,23 @@
 	<head>
 		<title>Menu | Food.</title>
 		<link rel="stylesheet" href="../style/style.css">
-		<!-- boostrap -->
-		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
-			rel="stylesheet"> -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script> -->
 	</head>
 	
 	<body> 
 		<header class="head-1">
-			<a href="#" class="logo">Food<span>.</span></a>
+			<a href="index.html" class="logo">Food<span>.</span></a>
 			<div class="menuToggle" onclick="toggleMenu();"></div>
 			<ul class="navigation">
 				<li><a href="index.html#banner" onclick="toggleMenu();">Home</a></li>
+                <li><a href="search.html">Tìm kiếm</a></li>
 				<li><a href="index.html#about" onclick="toggleMenu();">About</a></li>
 				<li><a href="index.html#menu" onclick="toggleMenu();">Menu</a></li>
 				<li><a href="index.html#expert" onclick="toggleMenu();">Đầu bếp</a></li>
 				<li><a href="index.html#danhgia" onclick="toggleMenu();">Đánh giá</a></li>
 				<li><a href="index.html#contact" onclick="toggleMenu();">Liên hệ</a></li>
-				<li><a href="login.html">Account</a></li>
-				<li><a href="#">Gio hang</a></li>
+				<li><a href="login.html">Tài khoản</a></li>
+				<li><a href="cart.html">Giỏ hàng</a></li>
 			</ul>
 		</header>
 
@@ -30,172 +27,232 @@
             <div class="row-1 row-2">
                 <h2>Tất cả các món</h2>
                 <select>
-                    <option>Mac dinh</option>
-                    <option>Sap xep theo gia tien (tang dan)</option>
-                    <option>Sap xep theo gia tien (giam dan)</option>
-                    <option>Sap xep theo danh gia</option>
-                    <option>Ban chay</option>
+                    <option>Các món canh</option>
+                    <option>Các món bánh</option>
+                    <option>Sắp xếp theo giá tiền (giảm dần)</option>
+                    <option>Sắp xếp theo giá tiền (tăng dần)</option>
+                    <option>Sắp xếp theo đánh giá</option>
                 </select>
             </div>
 
-            <div>
+            <div class="row-3">
                 <div class="row-1">
                     <div class="col-1">
-                        <img src="images/banhxeo.jpg">
-                        <h4>Bánh xèo</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/banhxeo.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Bánh xèo</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>60.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>60.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/phoga.jpg">
-                        <h4>Phở gà</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/phoga.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Phở gà</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>50.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>50.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/baotuhamtieu.jpg">
-                        <h4>Bao tử hầm tiêu</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/baotuhamtieu.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Bao tử hầm tiêu</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>70.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>70.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/cakho.jpg">
-                        <h4>Bánh xèo</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/cakho.jpg"></a>
+                        <div class="col-1-end">
+                            <div>
+                            <h4>Cá kho</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>75.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>75.000đ</p>
                     </div>
                 </div>
                 <div class="row-1">
                     <div class="col-1">
-                        <img src="images/bundaumamtom.jpg">
-                        <h4>Bún đậu mắm tôm</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/bundaumamtom.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Bún đậu mắm tôm</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>55.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>55.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/nemnuong.jpg">
-                        <h4>Nem nướng</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/nemnuong.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Nem nướng</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>45.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>45.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/taiheosotthai.jpg">
-                        <h4>Tai heo sốt thái</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/taiheosotthai.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Tai heo sốt thái</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>60.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>60.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/gacuonladua.jpg">
-                        <h4>gà cuốn lá dứa</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/gacuonladua.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Gà cuốn lá dứa</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>80.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>80.000đ</p>
                     </div>
                 </div>
                 <div class="row-1">
                     <div class="col-1">
-                        <img src="images/canhkhoqua.jpg">
-                        <h4>Canh khổ qua</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/canhkhoqua.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Canh khổ qua</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>35.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>35.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/chaolong.jpg">
-                        <h4>Cháo lòng</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/chaolong.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Cháo lòng</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>30.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>30.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/comgahoian.jpg">
-                        <h4>Cơm gà Hội An</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/comgahoian.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Cơm gà Hội An</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>60.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>60.000đ</p>
                     </div>
                     <div class="col-1">
-                        <img src="images/canhngheunaukhe.jpg">
-                        <h4>Canh nghêu nấu khế</h4>
-                        <div class="rating">
+                        <a href="productdetail.html"><img src="images/canhngheunaukhe.jpg"></a>
+                        <div  class="col-1-end">
+                            <div>
+                            <h4>Canh nghêu nấu khế</h4>
+                            <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
+                            </div>
+                            <p>55.000đ</p>
+                            </div>
+                            <button>Thêm vào giỏ</button>
                         </div>
-                        <p>55.000đ</p>
                     </div>
                 </div>
             </div>
 
             <div class="page-btn">
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
+                <a href="products.html"><span>1</span></a>
+                <a href="products.html"><span>2</span></a>
+                <a href="products.html"><span>3</span></a>
+                <a href="products.html"><span>4</span></a>
                 <span>&#8594;</span>
             </div>
         </div>
@@ -212,7 +269,7 @@
 
 			<div class="e">
 				<h4><i class="fa fa-copyright" aria-hidden="true"></i>Copyright 2021 - Nha hang Food. All Right Reserved</h4>
-				<p>Giấy phép số 2215/GP-TTĐT do Sở Thông tin và Truyền thông Hà Nội cấp ngày 1 tháng 2 năm 2021</p>
+				<p></p>
 			</div>
 		</section>
 		

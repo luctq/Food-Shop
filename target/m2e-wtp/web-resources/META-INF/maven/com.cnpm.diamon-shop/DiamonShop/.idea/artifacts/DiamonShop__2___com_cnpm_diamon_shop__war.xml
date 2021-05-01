@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DiamonShop (2) (com.cnpm.diamon-shop):war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>DiamonShop (2) (com.cnpm.diamon-shop)</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="DiamonShop-1.0.war">
+      <element id="artifact" artifact-name="DiamonShop (2) (com.cnpm.diamon-shop):war exploded" />
+    </root>
+  </artifact>
+</component>

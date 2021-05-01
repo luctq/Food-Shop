@@ -1,6 +1,4 @@
 eclipse.preferences.version=1
-encoding//src/main/java/food/Controller/Admin/LoginController.java=UTF-8
-encoding//src/main/java/food/Controller/User/UserController.java=UTF-8
+encoding//src/main/java/DiamonShop/Controller/Admin/LoginController.java=UTF-8
+encoding//src/main/java/DiamonShop/Controller/User/UserController.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/addUser.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/user/productdetails.jsp=UTF-8
-encoding//src/main/webapp/assets/user/style/style.css=UTF-8
