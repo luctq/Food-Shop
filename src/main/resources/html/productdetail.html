@@ -9,16 +9,42 @@
 		<header class="head-1">
 			<a href="index.html" class="logo">Food<span>.</span></a>
 			<div class="menuToggle" onclick="toggleMenu();"></div>
-			<ul class="navigation">
-				<li><a href="index.html#banner" onclick="toggleMenu();">Home</a></li>
-                <li><a href="search.html">Tìm kiếm</a></li>
-				<li><a href="index.html#about" onclick="toggleMenu();">About</a></li>
-				<li><a href="index.html#menu" onclick="toggleMenu();">Menu</a></li>
-				<li><a href="index.html#expert" onclick="toggleMenu();">Đầu bếp</a></li>
-				<li><a href="index.html#danhgia" onclick="toggleMenu();">Đánh giá</a></li>
-				<li><a href="login.html">Tài khoản</a></li>
-				<li><a href="cart.html">Giỏ hàng</a></li>
-			</ul>
+			<div class="right">
+				<ul class="navigation no-1">
+					<li><a href="#banner" onclick="toggleMenu();">Home</a></li>
+	    			<li><a href="search.html">Tìm kiếm</a></li>
+					<li><a href="#about" onclick="toggleMenu();">About</a></li>
+					<li><a href="#menu" onclick="toggleMenu();">Menu</a></li>
+					<li><a href="#expert" onclick="toggleMenu();">Đầu bếp</a></li>
+                    <li><a href="#danhgia" onclick="toggleMenu();">Đánh giá</a></li>
+					<li><a href="cart.html">Giỏ hàng</a></li>
+					<li class="signin"><a href="#" onclick="toggleMenu();">Đăng nhập</a></li>
+				</ul>
+
+				<ul class="navigation no-2">
+					<!-- phần sau khi đăng nhập là avt người dùng nè -->
+					<li class="user-part" onclick="toggleDropdown();">
+						<a href="#">
+							<p>User Name</p>
+							<img src="images/avt4.jpg">
+							<i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </a>
+
+						<div class="drop-down">
+							<ul>
+								<li><a href="profile.html">
+										<i class="fa fa-user" aria-hidden="true"></i>
+										Tài khoản
+									</a></li>
+								<li><a href="#">
+                                    	<i class="fa fa-sign-out" aria-hidden="true"></i>
+										Đăng xuất
+								</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</header>
 
         <div class="container underline">
@@ -410,6 +436,10 @@
             smallImg[3].onclick = function() {
                 productImg.src = smallImg[3].src;
             }
+            function toggleDropdown() {
+				const dropdown = document.querySelector('.no-2 .drop-down');
+				dropdown.classList.toggle("active");
+			}
         </script>
 
 	</body>
