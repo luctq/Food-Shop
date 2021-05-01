@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/mvc http://springframework.org/schema/mvc/spring-mvc-4.1.xsd
 		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd">
 	
-	<context:component-scan base-package="DiamonShop"></context:component-scan>
+	<context:component-scan base-package="food"></context:component-scan>
 	<bean class ="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"></property>	
 		<property name="suffix" value=".jsp"></property>
