@@ -1,5 +1,7 @@
 package food.Service.User;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +15,9 @@ public class EvaluateServiceImpl {
 	
 	public void InsertContentEvaluate(EvaluateDto evaluate) {
 		evaluateDao.InsertContentEvaluate(evaluate);
+	}
+	
+	public List<EvaluateDto> GetDataEvaluate(long id) {
+		return evaluateDao.GetDataEvaluate(id);
 	}
 }

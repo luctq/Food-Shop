@@ -36,7 +36,7 @@
 
 	<div class="container underline">
 		<div class="row-1 row-2">
-			<h2>Chi tiết về món ăn</h2>
+			<h2>Chi tiết về món ăn<p>${ evaluates.size() }</p></h2>
 		</div>
 	</div>
 
@@ -100,62 +100,21 @@
 					sao</span> <span>2 sao</span> <span>1 sao</span>
 			</div>
 		</div>
+		<c:forEach var = "item" items = "${ evaluates }" varStatus="loop">
 		<div class="cus-comment">
 			<img src="images/avt1.jpg">
 			<div>
 				<small>user_name</small>
 				<div class="rating">
-					<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i>
+					<c:forEach begin = "1" end = "${ item.num_star }">
+					<i class="fa fa-star"></i>
+					</c:forEach>
 				</div>
 				<br>
-				<p>Món ăn rất rất ngon. Hương vị tuyệt vời. Nó gợi nhớ cho tôi
-					về món ăn mẹ thường nấu. Nhân viên phục vụ tốt.</p>
+				<p>${ item.content }</p>
 			</div>
 		</div>
-		<div class="cus-comment">
-			<img src="images/avt0.png">
-			<div>
-				<small>user_name1</small>
-				<div class="rating">
-					<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i>
-				</div>
-				<br>
-				<p>Món ăn rất rất ngon. Hương vị tuyệt vời. Nó gợi nhớ cho tôi
-					về món ăn mẹ thường nấu. Nhân viên phục vụ tốt.</p>
-			</div>
-		</div>
-		<div class="cus-comment">
-			<img src="images/avt2.jpg">
-			<div>
-				<small>user_name2</small>
-				<div class="rating">
-					<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i>
-				</div>
-				<br>
-				<p>Món ăn rất rất ngon. Hương vị tuyệt vời. Nó gợi nhớ cho tôi
-					về món ăn mẹ thường nấu. Nhân viên phục vụ tốt.</p>
-			</div>
-		</div>
-		<div class="cus-comment">
-			<img src="images/avt3.jpg">
-			<div>
-				<small>user_name3</small>
-				<div class="rating">
-					<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-						class="fa fa-star-o"></i>
-				</div>
-				<br>
-				<p>Món ăn rất rất ngon. Hương vị tuyệt vời. Nó gợi nhớ cho tôi
-					về món ăn mẹ thường nấu. Nhân viên phục vụ tốt.</p>
-			</div>
-		</div>
+		</c:forEach>
 		<div class="comment-after">
 			<span>1</span></a> <span>2</span></a> <span>3</span></a> <span>&#8594;</span> <span
 				class="add" onclick="toggleComment();">Thêm đánh giá</span>
@@ -165,7 +124,7 @@
 			<img src="images/avt4.jpg">
 			<div class="cmt">
 				<small>user_name4</small>
-				<form method = "luu-danh-gia${ product.id_products }" method="POST" modelAttribute="evaluate">
+				<form action = "save${ product.id_products }" method="POST" modelAttribute="evaluate">
 					<div class="rating-1">
 						<input type="radio" id="star5" name="num_star" value="5" /> <label
 							class="full" for="star5" title="Cực kì tuyệt vời - 5 sao"></label>

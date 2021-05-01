@@ -16,7 +16,7 @@ import food.Entity.User.Users;
 import food.Service.User.AccountServiceImpl;
 @Controller
 public class UserController extends BaseController {
-	
+	public static boolean login = false;
 	@Autowired
 	AccountServiceImpl accountService = new AccountServiceImpl();
 	@RequestMapping(value = "/dang-ky", method = RequestMethod.POST )
@@ -46,6 +46,7 @@ public class UserController extends BaseController {
 	public ModelAndView Login(HttpSession session, @ModelAttribute("user") Users user) {
 		user = accountService.CheckAccount(user);
 		if (user != null) {
+			UserController.login = true;
 			_mvShare.setViewName("redirect:trang-chu");
 			session.setAttribute("LoginInfo", user);
 			return _mvShare;
