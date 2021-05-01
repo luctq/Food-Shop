@@ -2,238 +2,214 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<title>Trang chu</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hôm nay ăn gì?</title>
+<link href="<c:url value="/assets/user/style/style.css" />"
+	rel="stylesheet" />
+<!-- boostrap -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
+			rel="stylesheet"> -->
+<link rel="stylesheet"
+	href="<c:url value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />">
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script> -->
+</head>
 <body>
-	<!-- 
-Body Section 
--->
-	<div class="row">
-		<div id="sidebar" class="span3">
-			<div class="well well-small">
-				<ul class="nav nav-list">
-					<c:forEach var="item" items="${ categorys }">
-						<li><a href='<c:url value="/san-pham/${ item.id }" />'><span
-								class="icon-circle-blank"></span> ${ item.name } </a></li>
-					</c:forEach>
-					<c:if test="${ not empty TotalPriceCart }">
-						<li><a class="totalInCart" href="cart.html"><strong>Tổng
-									giá tiền: <span class="badge badge-warning pull-right"
-									style="line-height: 18px;"><fmt:formatNumber
-											type="number" groupingUsed="true" value="${ TotalPriceCart }" />₫</span>
-							</strong></a></li>
-					</c:if>
-					<c:if test="${ empty TotalPriceCart }">
-						<li><a class="totalInCart" href="cart.html"><strong>Tổng
-									giá tiền: <span class="badge badge-warning pull-right"
-									style="line-height: 18px;"><fmt:formatNumber
-											type="number" groupingUsed="true" value="0" />₫</span>
-							</strong></a></li>
-					</c:if>
-				</ul>
+	<header>
+			<a href="index.html" class="logo">Food<span>.</span></a>
+			<div class="menuToggle" onclick="toggleMenu();"></div>
+			<ul class="navigation">
+				<li><a href="#banner" onclick="toggleMenu();">Home</a></li>
+				<li><a href="search.html">Tìm kiếm</a></li>
+				<li><a href="#about" onclick="toggleMenu();">About</a></li>
+				<li><a href="#menu" onclick="toggleMenu();">Menu</a></li>
+				<li><a href="#expert" onclick="toggleMenu();">Đầu bếp</a></li>
+				<li><a href="#danhgia" onclick="toggleMenu();">Đánh giá</a></li>
+				<li><a href="login.html">Tài khoản</a></li>
+				<li><a href="cart.html">Giỏ hàng</a></li>
+			</ul>
+		</header>
+	<section class="banner" id="banner">
+			<div class="content">
+				<h2>Tinh hoa ẩm thực Việt</h2>
+				<p></p>
+				<a href="products.html#menu" class="btn">Menu<i class="fa fa-long-arrow-right"></i></a>
 			</div>
+		</section>
 
-			<div class="well well-small alert alert-warning cntr">
-				<h2>50% Discount</h2>
+	<section class="about" id="about">
+		<div class="row">
+			<div class="col50">
+				<h2 class="titleText">
+					<span>About</span> Us
+				</h2>
 				<p>
-					only valid for online order. <br> <br> <a
-						class="defaultBtn" href="#">Click here </a>
+					Must change this paragraph the worl is all abc xyz and here is you
+					:V It's just a joke to do for this web and for the content is emty
+					:v<br>
+					<br> this is another paragraph. let's change it for your own
+					website :V i don't know what to write here right now so i wrote
+					sone thing crazy like this :V there are so many failure in grammar
+					like baka :v
 				</p>
 			</div>
-			<div class="well well-small">
-				<a href="#"><img
-					src="<c:url value="/assets/user/img/paypal.jpg" />"
-					alt="payment method paypal"></a>
-			</div>
-
-			<a class="shopBtn btn-block" href="#">Upcoming products <br>
-				<small>Click to view</small></a> <br> <br>
-			<ul class="nav nav-list promowrapper">
-				<c:forEach var="item" items="${ products }" begin="1" end="3"
-					varStatus="loop">
-					<li>
-						<div class="thumbnail">
-							<a class="zoomTool"
-								href="chi-tiet-san-pham/${ item.id_products }"
-								title="add to cart"><span class="icon-search"></span> QUICK
-								VIEW</a> <img src="<c:url value="/assets/user/img/${ item.img }" />"
-								alt="bootstrap ecommerce templates">
-							<div class="caption">
-								<h4>
-									<a class="defaultBtn"
-										href="chi-tiet-san-pham/${ item.id_products }">VIEW</a> <span
-										class="pull-right"><fmt:formatNumber type="number"
-											groupingUsed="true" value="${ item.price }" />₫</span>
-								</h4>
-							</div>
-						</div>
-					</li>
-					<li style="border: 0">&nbsp;</li>
-				</c:forEach>
-			</ul>
-
-		</div>
-		<div class="span9">
-			<div class="well np">
-				<div id="myCarousel" class="carousel slide homCar">
-					<div class="carousel-inner">
-						<c:forEach var="item" items="${ slides }" varStatus="index">
-							<c:if test="${ index.first }">
-								<div class="item">
-							</c:if>
-							<c:if test="${ not index.first }">
-								<div class="item">
-							</c:if>
-							<img style="width: 100%"
-								src="<c:url value="/assets/user/img/${ item.img }" />"
-								alt="bootstrap ecommerce templates">
-							<div class="carousel-caption">
-								<h4>${ item.caption }</h4>
-								<p>
-									<span>${ item.content }</span>
-								</p>
-							</div>
-					</div>
-					</c:forEach>
-					<div class="item">
-						<img style="width: 100%"
-							src="<c:url value="/assets/user/img/carousel1.png" />"
-							alt="bootstrap ecommerce templates">
-						<div class="carousel-caption">
-							<h4>Bootstrap Ecommerce template</h4>
-							<p>
-								<span>Highly Google seo friendly</span>
-							</p>
-						</div>
-					</div>
-					<div class="item active">
-						<img style="width: 100%"
-							src="<c:url value="/assets/user/img/carousel3.png" />"
-							alt="bootstrap ecommerce templates">
-						<div class="carousel-caption">
-							<h4>Twitter Bootstrap cart</h4>
-							<p>
-								<span>Very easy to integrate and expand.</span>
-							</p>
-						</div>
-					</div>
-					<div class="item">
-						<img style="width: 100%"
-							src="<c:url value="/assets/user/img/bootstrap-templates.png" />"
-							alt="bootstrap templates">
-						<div class="carousel-caption">
-							<h4>Bootstrap templates integration</h4>
-							<p>
-								<span>Compitable to many more opensource cart</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<a class="left carousel-control" href="#myCarousel"
-					data-slide="prev">&lsaquo;</a> <a class="right carousel-control"
-					href="#myCarousel" data-slide="next">&rsaquo;</a>
-			</div>
-		</div>
-		<!--
-New Products
--->
-
-		<div class="well well-small">
-			<h3>Sản phẩm mới</h3>
-			<hr class="soften" />
-			<div class="row-fluid">
-				<div id="newProductCar" class="carousel slide">
-					<div class="carousel-inner">
-						<c:if test="${ products.size() > 0 }">
-							<div class="item active">
-								<ul class="thumbnails">
-									<c:forEach var="item" items="${ products }" varStatus="loop">
-										<li class="span3">
-											<div class="thumbnail">
-												<a class="zoomTool"
-													href="chi-tiet-san-pham/${ item.id_products }"
-													title="add to cart"><span class="icon-search"></span>
-													QUICK VIEW</a> <a
-													href="chi-tiet-san-pham/${ item.id_products }" class="tag"></a>
-												<a href="product_details.html"><img
-													src="<c:url value="/assets/user/img/${ item.img }" />"
-													alt="bootstrap-ring"></a>
-											</div>
-										</li>
-										<c:if
-											test="${ (loop.index + 1) % 4 == 0 || (loop.index + 1)  == products.size() }">
-								</ul>
-							</div>
-							<c:if test="${ (loop.index + 1) < products.size() }">
-								<div class="item">
-									<ul class="thumbnails">
-							</c:if>
-						</c:if>
-						</c:forEach>
-						</c:if>
-					</div>
-					<a class="left carousel-control" href="#newProductCar"
-						data-slide="prev">&lsaquo;</a> <a class="right carousel-control"
-						href="#newProductCar" data-slide="next">&rsaquo;</a>
+			<div class="col50">
+				<div class="imgBx">
+					<img src="<c:url value="/assets/user/images/aboutImg.jpg" />">
 				</div>
 			</div>
 		</div>
-		<!--
-	Featured Products
-	-->
-		<div class="well well-small">
-			<h3>
-				<a class="btn btn-mini pull-right" href="products.html"
-					title="View more">VIew More<span class="icon-plus"></span></a> Sản
-				phảm nổi bật
-			</h3>
-			<hr class="soften" />
-			<div class="row-fluid">
-				<c:if test="${ products.size() > 0 }">
-					<ul class="thumbnails">
+	</section>
 
-						<c:forEach var="item" items="${ products }" varStatus="loop">
-							<li class="span4">
-								<div class="thumbnail">
-									<a class="zoomTool"
-										href="chi-tiet-san-pham/${ item.id_products }"
-										title="add to cart"><span class="icon-search"></span>
-										QUICK VIEW</a> <a href="chi-tiet-san-pham/${ item.id_products }"><img
-										src="<c:url value="/assets/user/img/${ item.img }"/>" alt=""></a>
-									<div class="caption">
-										<h5>${ item.name }</h5>
-										<h4>
-											<a class="defaultBtn" href="product_details.html"
-												title="Click to view"><span class="icon-zoom-in"></span></a>
-											<a class="shopBtn"
-												href="<c:url value="/AddCart/${ item.id_products }" />"
-												title="add to cart"><span class="icon-plus"></span></a> <span
-												class="pull-right"><fmt:formatNumber type="number"
-													groupingUsed="true" value="${ item.price }" />₫</span>
-										</h4>
-									</div>
-								</div>
-							</li>
-
-							<c:if
-								test="${ (loop.index + 1) % 3 == 0 || (loop.index + 1)  == products.size() }">
-					</ul>
-
-					<c:if test="${ (loop.index + 1) < products.size() }">
-						<ul class="thumbnails">
-					</c:if>
-				</c:if>
-
-				</c:forEach>
-
-				</c:if>
+	<section class="menu" id="menu">
+		<div class="title">
+			<h2 class="titleText">
+				Our <span>Menu</span>
+			</h2>
+			<p>and agian another paragraph lol :3.</p>
+		</div>
+		<div class="content">
+			<c:forEach var="item" items="${ products }" begin="1" end="5"
+				varStatus="loop">
+				<div class="box">
+					<div class="imgBx">
+						<img src="<c:url value="/assets/user/images/${ item.img }"/>">
+					</div>
+					<div class="text">
+						<h3>${ item.name }</h3>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
+		<div class="more">
+			<a href="products.html#menu" class="btn">Xem them <i
+				class="fa fa-long-arrow-right"> </i></a>
+		</div>
+	</section>
+	<section class="danhgia" id="danhgia">
+		<div class="title white">
+			<h2 class="titleText">
+				<span>D</span>anh gia ve chung toi
+			</h2>
+		</div>
+		<div class="content">
+			<div class="box">
+				<div class="imgbX">
+					<img src="images/dg3.jpg">
+				</div>
+				<div class="text">
+					<p>“Nơi bạn nhất định phải ghé thăm! 10”+! Ăn chay à? Trước
+						tiên phải nói luôn: tôi không phải là người ăn chay. Nhưng vì lần
+						dùng bữa đầu tiên tại Food. quá ngon, đã khiến chúng tôi trở lại
+						cho lần thứ hai, và chắc chắn sẽ còn nhiều lần nữa, mỗi khi chúng
+						tôi đến Việt Nam. Dịch vụ thật tuyệt vời. Các món ăn được trình
+						bày rất đẹp, tươi mới và thơm ngon. Không gian nhà hàng sạch sẽ và
+						phong cách thiết kế cũng rất đẹp. Cảm ơn Hum thật nhiều!</p>
+					<h4>Name</h4>
+				</div>
+			</div>
+			<div class="box">
+				<div class="imgbX">
+					<img src="images/dg4.jpg">
+				</div>
+				<div class="text">
+					<p>“Nơi bạn nhất định phải ghé thăm! 10”+! Ăn chay à? Trước
+						tiên phải nói luôn: tôi không phải là người ăn chay. Nhưng vì lần
+						dùng bữa đầu tiên tại Food. quá ngon, đã khiến chúng tôi trở lại
+						cho lần thứ hai, và chắc chắn sẽ còn nhiều lần nữa, mỗi khi chúng
+						tôi đến Việt Nam. Dịch vụ thật tuyệt vời. Các món ăn được trình
+						bày rất đẹp, tươi mới và thơm ngon. Không gian nhà hàng sạch sẽ và
+						phong cách thiết kế cũng rất đẹp. Cảm ơn Hum thật nhiều!</p>
+					<h4>Name</h4>
+				</div>
+			</div>
+			<div class="box">
+				<div class="imgbX">
+					<img src="images/dg1.jpg">
+				</div>
+				<div class="text">
+					<p>“Nơi bạn nhất định phải ghé thăm! 10”+! Ăn chay à? Trước
+						tiên phải nói luôn: tôi không phải là người ăn chay. Nhưng vì lần
+						dùng bữa đầu tiên tại Food. quá ngon, đã khiến chúng tôi trở lại
+						cho lần thứ hai, và chắc chắn sẽ còn nhiều lần nữa, mỗi khi chúng
+						tôi đến Việt Nam. Dịch vụ thật tuyệt vời. Các món ăn được trình
+						bày rất đẹp, tươi mới và thơm ngon. Không gian nhà hàng sạch sẽ và
+						phong cách thiết kế cũng rất đẹp. Cảm ơn Hum thật nhiều!</p>
+					<h4>Name</h4>
+				</div>
+			</div>
+			<div class="box">
+				<div class="imgbX">
+					<img src="images/dg2.jpg">
+				</div>
+				<div class="text">
+					<p>“Nơi bạn nhất định phải ghé thăm! 10”+! Ăn chay à? Trước
+						tiên phải nói luôn: tôi không phải là người ăn chay. Nhưng vì lần
+						dùng bữa đầu tiên tại Food. quá ngon, đã khiến chúng tôi trở lại
+						cho lần thứ hai, và chắc chắn sẽ còn nhiều lần nữa, mỗi khi chúng
+						tôi đến Việt Nam. Dịch vụ thật tuyệt vời. Các món ăn được trình
+						bày rất đẹp, tươi mới và thơm ngon. Không gian nhà hàng sạch sẽ và
+						phong cách thiết kế cũng rất đẹp. Cảm ơn Hum thật nhiều!</p>
+					<h4>Name</h4>
+				</div>
+			</div>
+			<div class="box">
+				<div class="imgbX">
+					<img src="images/dg5.jpg">
+				</div>
+				<div class="text">
+					<p>“Nơi bạn nhất định phải ghé thăm! 10”+! Ăn chay à? Trước
+						tiên phải nói luôn: tôi không phải là người ăn chay. Nhưng vì lần
+						dùng bữa đầu tiên tại Food. quá ngon, đã khiến chúng tôi trở lại
+						cho lần thứ hai, và chắc chắn sẽ còn nhiều lần nữa, mỗi khi chúng
+						tôi đến Việt Nam. Dịch vụ thật tuyệt vời. Các món ăn được trình
+						bày rất đẹp, tươi mới và thơm ngon. Không gian nhà hàng sạch sẽ và
+						phong cách thiết kế cũng rất đẹp. Cảm ơn Hum thật nhiều!</p>
+					<h4>Name</h4>
+				</div>
 			</div>
 		</div>
-		<hr>
-		<div class="well well-small">
-			<a class="btn btn-mini pull-right" href="#">Xem thêm<span
-				class="icon-plus"></span></a> Tất cả sản phẩm
+	</section>
+	<section class="ending">
+		<div class="e">
+			<h4>
+				<i class="fa fa-map-marker" aria-hidden="true"></i>Tru so tai Ha Noi
+			</h4>
+			<p>Tầng 2, tòa nhà Center Building, Hapulico Complex, số 1 Nguyễn
+				Huy Tưởng, p. Thanh Xuân Trung, quận Thanh Xuân, Hà Nội.</p>
+			<p>Điện thoại: 024 7389 6655</p>
+			<h4>
+				<i class="fa fa-map-marker" aria-hidden="true"></i>Tru so tai TP. Ho
+				Chi Minh
+			</h4>
+			<p>Tầng 3 Tòa nhà 123, 123 Võ Văn Tần, phường 6, quận 3, Tp. HCM</p>
+			<p>Điện thoại: 028 7407 8979</p>
 		</div>
-	</div>
-	</div>
+
+		<div class="e">
+			<h4>
+				<i class="fa fa-copyright" aria-hidden="true"></i>Copyright 2021 -
+				Nha hang Food. All Right Reserved
+			</h4>
+			<p>Giấy phép số 2215/GP-TTĐT do Sở Thông tin và Truyền thông Hà
+				Nội cấp ngày 1 tháng 2 năm 2021</p>
+		</div>
+	</section>
+	<script type="text/javascript">
+		window.addEventListener('scroll', function() {
+			const header = document.querySelector('header');
+			header.classList.toggle("sticky", window.scrollY > 0);
+		})
+
+		function toggleMenu() {
+			const menuToggle = document.querySelector('.menuToggle');
+			const navigation = document.querySelector('.navigation');
+			menuToggle.classList.toggle('active');
+			navigation.classList.toggle('active');
+		}
+	</script>
 </body>
-
+</html>

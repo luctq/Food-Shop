@@ -1,0 +1,146 @@
+<html>
+	<head>
+		<title>Tài khoản | Food.</title>
+		<link rel="stylesheet" href="../style/style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	
+	<body> 
+		<header class="head-1">
+			<a href="index.html" class="logo">Food<span>.</span></a>
+			<div class="menuToggle" onclick="toggleMenu();"></div>
+			<ul class="navigation">
+				<li><a href="index.html#banner" onclick="toggleMenu();">Home</a></li>
+                <li><a href="search.html">Tìm kiếm</a></li>
+				<li><a href="index.html#about" onclick="toggleMenu();">About</a></li>
+				<li><a href="index.html#menu" onclick="toggleMenu();">Menu</a></li>
+				<li><a href="index.html#expert" onclick="toggleMenu();">Đầu bếp</a></li>
+				<li><a href="index.html#danhgia" onclick="toggleMenu();">Đánh giá</a></li>
+				<li><a href="#">Tài khoản</a></li>
+				<li><a href="#">Giỏ hàng</a></li>
+			</ul>
+		</header>
+
+        <div class="profile">
+            <div class="colunm-1">
+                <div class="imgB">
+                    <img src="images/avt1.jpg">
+                    <p>User Name</p>
+                </div>
+                <div class="profile-menu">
+                    <ul>
+                        <div class="menu-1"><a href="#"><li>Hồ sơ</li></a></div>
+                        <div class="menu-2"><a href="#"><li>Đổi mật khẩu</li></a></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="colunm-2">
+                <div class="for-menu-1 active">
+                    <div class="title">
+                        <h2>Hồ sơ của tôi</h2>
+                        <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+                    </div>
+                    <div class="formB">
+                        <form>
+                            <div class="row-01">
+                                <div class="label"><label for="cusName">Tên</label></div>
+                                <div class="input"><input type="text" id="cusName" value="User Name"></div>
+                            </div>
+                            <div class="row-01">
+                                <div class="label"><label for="cusMail">Email</label></div>
+                                <div class="input"><input type="email" id="cusMail" value="usermail@gmail.com"></div>
+                            </div>
+                            <div class="row-01">
+                                <div class="label"><label for="cusAddress">Địa chỉ</label></div>
+                                <div class="input"><input type="text" id="cusMail" value=""></div>
+                            </div>
+                            <div class="row-01">
+                                <div class="label"><label for="cusPhoneNumber">Số điện thoại</label></div>
+                                <div class="input"><input type="tel" id="cusPhoneNumber" value="0387534524"></div>
+                            </div>
+                            <button type="submit">Lưu</button>
+                        </form>
+                        
+                    </div>
+                </div>
+                <div class="for-menu-2">
+                    <div class="title">
+                        <h2>Đổi mật khẩu</h2>
+                        <p>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác</p>
+                    </div>
+                    <div class="formB">
+                        <form>
+                            <div class="row-01">
+                                <div class="label"><label for="oldPW">Mật khẩu hiện tại</label></div>
+                                <div class="input"><input type="password" id="oldPW" value=""></div>
+                            </div>
+                            <div class="row-01">
+                                <div class="label"><label for="newPW">Mật khẩu mới</label></div>
+                                <div class="input"><input type="email" id="newPW" value=""></div>
+                            </div>
+                            <div class="row-01">
+                                <div class="label"><label for="newPWagain">Xác nhận mật khẩu</label></div>
+                                <div class="input"><input type="text" id="newPWagain" value=""></div>
+                            </div>
+                            
+                            <button type="submit">Lưu</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="ending">
+			<div class="e">
+				<h4><i class="fa fa-map-marker" aria-hidden="true"></i>Tru so tai Ha Noi</h4>
+				<p>Tầng 2, tòa nhà Center Building, Hapulico Complex, số 1 Nguyễn Huy Tưởng, p. Thanh Xuân Trung, quận Thanh Xuân, Hà Nội.</p>
+				<p>Điện thoại: 024 7389 6655</p>
+				<h4><i class="fa fa-map-marker" aria-hidden="true"></i>Tru so tai TP. Ho Chi Minh</h4>
+				<p>Tầng 3 Tòa nhà 123, 123 Võ Văn Tần, phường 6, quận 3, Tp. HCM</p>
+				<p>Điện thoại: 028 7407 8979</p>
+			</div>
+
+			<div class="e">
+				<h4><i class="fa fa-copyright" aria-hidden="true"></i>Copyright 2021 - Nha hang Food. All Right Reserved</h4>
+				<p></p>
+			</div>
+		</section>
+		
+		<script type="text/javascript">
+			window.addEventListener('scroll', function() {
+				const header = document.querySelector('header');
+				header.classList.toggle("sticky", window.scrollY > 0);
+			})
+			function toggleMenu()
+			{
+				const menuToggle = document.querySelector('.menuToggle');
+				const navigation = document.querySelector('.navigation');
+				menuToggle.classList.toggle('active');
+				navigation.classList.toggle('active');
+			}
+            const menu1 = document.querySelector(".menu-1");
+            const menu2 = document.querySelector(".menu-2");
+            const menu1content = document.querySelector(".for-menu-1");
+            const menu2content = document.querySelector(".for-menu-2");
+
+            menu1.addEventListener("click", function() {
+                menu1.classList.toggle('active');
+                menu2.classList.remove('active');
+                if (menu1content.classList[1] == null) {
+                    menu1content.classList.toggle('active');
+                    menu2content.classList.remove('active');
+                }
+            })
+            menu2.addEventListener("click", function() {
+                menu2.classList.toggle('active');
+                menu1.classList.remove('active');
+                if (menu2content.classList[1] == null) {
+                    menu2content.classList.toggle('active');
+                    menu1content.classList.remove('active');
+                }
+            })
+		</script>
+
+	</body>
+</html>
