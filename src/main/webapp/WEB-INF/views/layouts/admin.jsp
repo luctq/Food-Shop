@@ -13,7 +13,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Admin web nông sản</title>
+<title>Admin web Food</title>
 
 <link href="<c:url value="/assets/admin/css/pace.min.css" />"
 	rel="stylesheet" />

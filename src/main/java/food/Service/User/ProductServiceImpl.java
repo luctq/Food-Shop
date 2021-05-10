@@ -28,4 +28,17 @@ public class ProductServiceImpl implements IProductService {
 	public List<ProductsDto> GetAllProductsPaginates(int start, int totalProductsPage) {
 		return productDao.GetAllProductsPaginates(start, totalProductsPage);
 	}
+
+	public List<ProductsDto> GetAllProductsSearch(String search) {
+		return productDao.GetAllProductsSearch(search);
+	}
+	public List<ProductsDto> GetAllProductsPaginatesSortAscPrice(int start, int totalPage) {
+		return productDao.GetAllProductsPaginatesSortAscPrice(start, totalPage);
+	}
+	public List<ProductsDto> GetAllProductsPaginatesSortDescPrice(int start, int totalPage) {
+		return productDao.GetAllProductsPaginatesSortDescPrice(start, totalPage);
+	}
+	public List<ProductsDto> GetAllProductsPaginatesSortName(int start, int totalPage) {
+		return productDao.GetAllProductsPaginatesSortName(start, totalPage);
+	}
 }

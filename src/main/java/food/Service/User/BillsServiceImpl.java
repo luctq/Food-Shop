@@ -1,6 +1,7 @@
 package food.Service.User;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,24 @@ public class BillsServiceImpl implements IBillsService {
 			billsDao.AddBillsDetail(billDetail);
 		}
 	}
-
+	
+	public List<Bills> GetDataBills() {
+		return billsDao.GetDataBills();
+	}
+	public Bills GetDataBillByID(int id) {
+		return billsDao.GetDataBillByID(id);
+	}
+	public List<BillDetail> GetDataBillDetails() {
+		return billsDao.GetDataBillDetails();
+	}
+	public void updateBillByID(Bills bill) {
+		billsDao.updateBillByID(bill);
+	}
+	public void DeleteBill(int id) {
+		billsDao.DeleteBill(id);
+	}
+	public void DeleteBillDetail(int id) {
+		billsDao.DeleteBillDetail(id);
+	}
+	
 }

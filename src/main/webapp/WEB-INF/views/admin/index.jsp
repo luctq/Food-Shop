@@ -16,7 +16,7 @@
                   <h5 class="text-white mb-0">3 <span class="float-right"><i class="fa fa-shopping-cart"></i></span>
                   </h5>
                   <div class="progress my-3" style="height:3px;">
-                    <div class="progress-bar" style="width:55%"></div>
+                    <div class="progress-bar" style="width:100%"></div>
                   </div>
                   <p class="mb-0 text-white small-font">Đơn hàng (theo tuần)<span class="float-right">+4.2% <i
                         class="zmdi zmdi-long-arrow-up"></i></span></p>
@@ -69,22 +69,22 @@
                 <table class="table align-items-center">
                   <tbody>
                     <tr>
-                      <td><i class="fa fa-circle text-white mr-2"></i>Rau sạch</td>
+                      <td><i class="fa fa-circle text-white mr-2"></i>Canh</td>
                       <td>58.000 VNĐ</td>
                       <td>+55%</td>
                     </tr>
                     <tr>
-                      <td><i class="fa fa-circle text-light-1 mr-2"></i>Củ quả</td>
+                      <td><i class="fa fa-circle text-light-1 mr-2"></i>Phở</td>
                       <td>110.000 VNĐ</td>
                       <td>+25%</td>
                     </tr>
                     <tr>
-                      <td><i class="fa fa-circle text-light-2 mr-2"></i>Hạt</td>
+                      <td><i class="fa fa-circle text-light-2 mr-2"></i>Bánh mì</td>
                       <td>215.500 VNĐ</td>
                       <td>+15%</td>
                     </tr>
                     <tr>
-                      <td><i class="fa fa-circle text-light-3 mr-2"></i>Mật ong</td>
+                      <td><i class="fa fa-circle text-light-3 mr-2"></i>Cơm</td>
                       <td>310.000 VNĐ</td>
                       <td>+5%</td>
                     </tr>

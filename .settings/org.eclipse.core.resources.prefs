@@ -1,13 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/food/Controller/Admin/LoginController.java=UTF-8
 encoding//src/main/java/food/Controller/User/UserController.java=UTF-8
-encoding//src/main/resources/html/cart.html=UTF-8
-encoding//src/main/resources/html/checkout.html=UTF-8
-encoding//src/main/resources/html/index.html=UTF-8
-encoding//src/main/resources/html/productdetail.html=UTF-8
-encoding//src/main/resources/html/products.html=UTF-8
-encoding//src/main/resources/html/profile.html=UTF-8
-encoding//src/main/resources/html/search.html=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/addUser.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/user/productdetails.jsp=UTF-8
 encoding//src/main/webapp/assets/user/style/style.css=UTF-8

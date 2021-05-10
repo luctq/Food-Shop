@@ -4,19 +4,19 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import food.Entity.Admin.AdminCategories;
+import food.Entity.Admin.AdminCategorys;
 
 @Service
 public interface IAdminCategoryServiceImpl {
 	
-	public List<AdminCategories> GetDataCategories();
+	public List<AdminCategorys> GetDataCategorys();
 	
-	public int AddCategory(AdminCategories category);
+	public int AddCategory(AdminCategorys category);
 	
 	public void DeleteCategory(int id);
 	
-	public AdminCategories GetCategoryByID(int id);
+	public AdminCategorys GetCategoryByID(int id);
 	
-	public void UpdateCategoryByID(int currentId, AdminCategories category);
+	public void UpdateCategoryByID(int currentId, AdminCategorys category);
 	
 }

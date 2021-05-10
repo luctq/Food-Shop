@@ -20,4 +20,7 @@ public class EvaluateServiceImpl {
 	public List<EvaluateDto> GetDataEvaluate(long id) {
 		return evaluateDao.GetDataEvaluate(id);
 	}
+	public List<EvaluateDto> GetUserEvaluate(long id_product) {
+		return evaluateDao.GetUserEvaluate(id_product);
+	}
 }

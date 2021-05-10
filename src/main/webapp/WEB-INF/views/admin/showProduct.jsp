@@ -39,7 +39,8 @@
                         <td>${product.name }</td>
                         <td><img style="    width: 110px;height: 67px; object-fit: cover;border: 1px solid #fff;" src="<c:url value="/assets/user/images/${ product.img }"/>" alt="${product.name}"></td>
                         <td>${product.id_category }</td>
-                        <td>${product.price }</td>
+                        <td><fmt:formatNumber type="number" groupingUsed="true"
+														value="${product.price }" />đ</td>
                         <td>
                         
                         <c:choose>
@@ -54,9 +55,9 @@
                         <td>${product.sale }%</td>
                         <td>${product.created_at }</td>
                         <td>
-                            <button class="btn btn-danger"><a href="admin/product/delete?id=${product.id_products}">Xóa</a></button>
+                            <button class="btn btn-danger"><a href="xoa-san-pham${product.id_products}">Xóa</a></button>
                          
-                          <button class="btn btn-success"><a href="admin/product/edit?id=${product.id_products}">Sửa</a></button>
+                          <button class="btn btn-success"><a href="sua-san-pham${product.id_products}">Sửa</a></button>
                         </td>
                       </tr>
                       </c:forEach>

@@ -41,7 +41,7 @@
 								<div class="form-group">
 									<label for="input-1">Giá</label> <input type="text"
 										class="form-control" id="input-1" placeholder="Giá"
-										name="product-price">
+										name="price">
 								</div>
 								<div class="form-group">
 									<label for="input-2">Trạng thái</label>
@@ -102,7 +102,7 @@
 								<div class="form-group">
 									<label for="input-1">Ảnh đại diện</label> <input type="text"
 										class="form-control" id="input-1" placeholder="Tên hình"
-										name="product-image">
+										name="img">
 								</div>
 								<div class="form-footer">
 									<button class="btn btn-danger">

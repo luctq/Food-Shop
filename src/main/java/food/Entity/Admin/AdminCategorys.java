@@ -1,6 +1,6 @@
 package food.Entity.Admin;
 
-public class AdminCategories {
+public class AdminCategorys {
 	private int id;
 	private String name;
 	private String descripttion;
@@ -11,7 +11,7 @@ public class AdminCategories {
 	public void setParent_id(int parent_id) {
 		this.parent_id = parent_id;
 	}
-	public AdminCategories() {
+	public AdminCategorys() {
 		super();
 	}
 	public int getId() {

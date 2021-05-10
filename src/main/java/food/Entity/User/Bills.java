@@ -1,15 +1,42 @@
 package food.Entity.User;
 
+import java.sql.Date;
+
 public class Bills {
 	private long id;
 	private String user;
 	private String phone;
-	private String password;
 	private String display_name;
 	private String address;
 	private double total;
 	private int quanty;
+	private int status;
+	private Date orderDay;
+	private int payment;
 	private String note;
+	public int getPayment() {
+		return payment;
+	}
+
+	public void setPayment(int payment) {
+		this.payment = payment;
+	}
+
+	public Date getOrderDay() {
+		return orderDay;
+	}
+
+	public void setOrderDay(Date orderDay) {
+		this.orderDay = orderDay;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	
 	public Bills() {
 		super();
@@ -37,14 +64,6 @@ public class Bills {
 	
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	
 	public String getDisplay_name() {

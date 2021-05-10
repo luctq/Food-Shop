@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import food.Entity.Admin.AdminCategories;
+import food.Entity.Admin.AdminCategorys;
 import food.Service.Admin.AdminCategoryServiceImpl;
 @Controller
 public class EditCategoryController extends BaseAdminController {
@@ -28,10 +28,9 @@ public class EditCategoryController extends BaseAdminController {
 		return _mvShare;
 	}
 	@RequestMapping(value = "/quan-tri/cap-nhat-the-loai", method = RequestMethod.POST)
-	public ModelAndView UpdateEditCate(@ModelAttribute("category") AdminCategories category) {
+	public ModelAndView UpdateEditCate(@ModelAttribute("category") AdminCategorys category) {
 		categoryService.UpdateCategoryByID(currentId, category);
 		_mvShare.setViewName("redirect:the-loai");
 		return _mvShare;
 	}
-	
 }

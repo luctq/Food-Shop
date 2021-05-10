@@ -77,16 +77,21 @@ public class CartController extends BaseController {
 	
 	@RequestMapping(value = "/checkout", method = RequestMethod.GET)
 	public ModelAndView CheckOut(HttpServletRequest request, HttpSession session) {
-		_mvShare.setViewName("user/checkout");
-		Bills bills = new Bills();
-		Users loginInfo = (Users)session.getAttribute("LoginInfo");
-		if (loginInfo != null) {
-			bills.setAddress(loginInfo.getAddress());
-			bills.setDisplay_name(loginInfo.getDisplay_name());
-			bills.setUser(loginInfo.getUser());
+		if(UserController.login == false) {
+			_mvShare.setViewName("redirect:dang-nhap");
+			return _mvShare;
+		} else {
+			_mvShare.setViewName("user/checkout");
+			Bills bills = new Bills();
+			Users loginInfo = (Users)session.getAttribute("LoginInfo");
+			if (loginInfo != null) {
+				bills.setAddress(loginInfo.getAddress());
+				bills.setDisplay_name(loginInfo.getDisplay_name());
+				bills.setUser(loginInfo.getUser());
+			}
+			_mvShare.addObject("bills", bills);
+			return _mvShare;
 		}
-		_mvShare.addObject("bills", bills);
-		return _mvShare;
 	}
 	
 	@RequestMapping(value = "/checkout", method = RequestMethod.POST)
@@ -95,6 +100,7 @@ public class CartController extends BaseController {
 		bills.setTotal(cartService.TotalPrice(cart));
 		bills.setQuanty(cartService.TotalQuanty(cart));
 		if (billsService.AddBills(bills) > 0) {
+			billsService.AddBillsDetail(cart);
 			return "redirect:gio-hang";
 		}
 		return "redirect:gio-hang";

@@ -8,9 +8,9 @@
 		<div id="sidebar-wrapper" data-simplebar=""
 			data-simplebar-auto-hide="true">
 			<div class="brand-logo">
-				<a href="admin/homepage"> <img src="${url}/images/logo-icon.png"
+				<a href="admin/homepage"> <img src="<c:url value="/assets/admin/images/logo-icon.png" />"
 					class="logo-icon" alt="logo icon">
-					<h5 class="logo-text">Admin Web Nông Sản</h5>
+					<h5 class="logo-text">Admin Web Food</h5>
 				</a>
 			</div>
 			<ul class="sidebar-menu do-nicescrol">
@@ -59,7 +59,7 @@
 					<li class="nav-item"><a
 						class="nav-link dropdown-toggle dropdown-toggle-nocaret"
 						data-toggle="dropdown" href="#"> <span class="user-profile"><img
-								src="views/assets/admin/images/avatar-admin.png"
+								src="<c:url value="/assets/admin/images/avatar-admin.png" />"
 								class="img-circle" alt="user avatar"></span>
 					</a>
 						<ul class="dropdown-menu dropdown-menu-right">
@@ -68,7 +68,7 @@
 									<div class="media">
 										<div class="avatar">
 											<img class="align-self-start mr-3"
-												src="views/assets/admin/images/avatar-admin.png"
+												src="<c:url value="/assets/admin/images/avatar-admin.png" />"
 												alt="user avatar">
 										</div>
 										<div class="media-body">

@@ -7,12 +7,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hôm nay ăn gì?</title>
+<title>Sản phẩm</title>
 <link href="<c:url value="/assets/user/style/style.css" />"
 	rel="stylesheet" />
-<!-- boostrap -->
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
-			rel="stylesheet"> -->
 <link rel="stylesheet"
 	href="<c:url value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />">
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script> -->
@@ -55,31 +52,93 @@
 </style>
 </head>
 <body>
-	<header>
-		<a href="#" class="logo">Food<span>.</span></a>
+	<header class="head-1">
+		<a href="trang-chu" class="logo">Food<span>.</span></a>
 		<div class="menuToggle" onclick="toggleMenu();"></div>
-		<ul class="navigation">
-			<li><a href="#banner" onclick="toggleMenu();">Home</a></li>
-			<li><a href="#about" onclick="toggleMenu();">About</a></li>
-			<li><a href="#menu" onclick="toggleMenu();">Menu</a></li>
-			<li><a href="#expert" onclick="toggleMenu();">Đầu bếp</a></li>
-			<li><a href="#danhgia" onclick="toggleMenu();">Đánh giá</a></li>
-			<li><a href="#contact" onclick="toggleMenu();">Liên hệ</a></li>
-			<li><a href="login.html">Account</a></li>
-			<li><a href="#">Gio hang</a></li>
-		</ul>
+		<div class="right">
+			<c:if test="${ empty LoginInfo  }">
+				<ul class="navigation no-1">
+					<li><a href="trang-chu"">Trang chủ</a></li>
+					<li><a href="tim-kiem">Tìm kiếm</a></li>
+					<li><a href="san-pham"">Sản phẩm</a></li>
+					<c:if test="${ not empty Cart  }">
+					<li><a href="gio-hang">Giỏ hàng(${ TotalQuantyCart })</a></li>
+					</c:if>
+					<c:if test="${ empty Cart  }">
+					<li><a href="gio-hang">Giỏ hàng(0)</a></li>
+					</c:if>
+				</ul>
+
+				<ul class="navigation no-2">
+					<!-- phần sau khi đăng nhập là avt người dùng nè -->
+					<li class="user-part" onclick="toggleDropdown();"><a>
+							<p>Đăng nhập</p> <img
+							src="<c:url value="/assets/user/images/avt0.png" />"> <i
+							class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+						<div class="drop-down dropdown-menu">
+							<ul>
+								<li><a href="dang-nhap"> <i class="fa fa-user"
+										aria-hidden="true"></i> Đăng nhập
+								</a></li>
+							</ul>
+						</div></li>
+				</ul>
+			</c:if>
+			<c:if test="${ not empty LoginInfo  }">
+				<ul class="navigation no-1">
+					<li><a href="trang-chu"">Trang chủ</a></li>
+					<li><a href="tim-kiem">Tìm kiếm</a></li>
+					<li><a href="san-pham"">Sản phẩm</a></li>
+					<c:if test="${ not empty Cart  }">
+					<li><a href="gio-hang">Giỏ hàng(${ TotalQuantyCart })</a></li>
+					</c:if>
+					<c:if test="${ empty Cart  }">
+					<li><a href="gio-hang">Giỏ hàng(0)</a></li>
+					</c:if>
+				</ul>
+				<ul class="navigation no-2">
+					<li class="user-part" onclick="toggleDropdown();"><a>
+							<p>${ LoginInfo.display_name}</p> <img
+							src="<c:url value="/assets/user/images/${ LoginInfo.avatar }" />">
+							<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+						<div class="drop-down">
+							<ul>
+								<li><a href="trang-ca-nhan${ LoginInfo.id }"> <i
+										class="fa fa-user" aria-hidden="true"></i> Tài khoản
+								</a></li>
+								<li><a href="dang-xuat"> <i class="fa fa-sign-out"
+										aria-hidden="true"></i> Đăng xuất
+								</a></li>
+							</ul>
+						</div></li>
+				</ul>
+			</c:if>
+		</div>
 	</header>
 	<div class="container" id="menu">
 
 		<div class="row-1 row-2">
 			<h2>Tất cả các món</h2>
-			<select>
-				<option>Mac dinh</option>
-				<option>Sap xep theo gia tien (tang dan)</option>
-				<option>Sap xep theo gia tien (giam dan)</option>
-				<option>Sap xep theo danh gia</option>
-				<option>Ban chay</option>
-			</select>
+			<form action="/FoodShop/san-pham" method="POST"
+				modelAttribute="typeSort">
+				<select name="typeSort">
+					<option value="${ typeValue }">${ type }</option>
+					<c:if test="${ typeValue != '1' }">
+						<option value="1">Mac dinh</option>
+					</c:if>
+					<c:if test="${ typeValue != '2' }">
+						<option value="2">Sap xep theo gia tien (tang dan)</option>
+					</c:if>
+					<c:if test="${ typeValue != '3' }">
+						<option value="3">Sap xep theo gia tien (giam dan)</option>
+					</c:if>
+					<c:if test="${ typeValue != '4' }">
+						<option value="4">Sap xep theo ten</option>
+					</c:if>
+				</select> <input type="submit" value="Xác nhận">
+			</form>
 		</div>
 
 		<div class="row-3">
@@ -110,6 +169,7 @@
 				</c:forEach>
 			</div>
 		</div>
+		<br>
 		<div class="pagination">
 			<c:forEach var="item" begin="1" end="${ paginateInfo.totalPage }"
 				varStatus="loop">
@@ -121,9 +181,7 @@
 				</c:if>
 			</c:forEach>
 		</div>
-		</br>
 	</div>
-
 	<section class="ending">
 		<div class="e">
 			<h4>
@@ -161,6 +219,10 @@
 			const navigation = document.querySelector('.navigation');
 			menuToggle.classList.toggle('active');
 			navigation.classList.toggle('active');
+		}
+		function toggleDropdown() {
+			const dropdown = document.querySelector('.no-2 .drop-down');
+			dropdown.classList.toggle("active");
 		}
 	</script>
 </body>

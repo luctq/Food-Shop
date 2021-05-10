@@ -24,4 +24,10 @@ public class UserService implements IUserService {
 	public void UpdateUserByID(int currentId, Users user) {
 		userDao.UpdateUserByID(currentId, user);
 	}
+	public void UpdateUser(int currentId, Users user) {
+		userDao.UpdateUser(currentId, user);
+	}
+	public void UpdatePassword(int currentId, String password) {
+		userDao.UpdatePassword(currentId, password);
+	}
 }

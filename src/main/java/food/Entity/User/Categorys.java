@@ -1,6 +1,6 @@
 package food.Entity.User;
 
-public class Categories {
+public class Categorys {
 	private int id;
 	private String name;
 	private String descripttion;
@@ -11,7 +11,7 @@ public class Categories {
 	public void setParent_id(int parent_id) {
 		this.parent_id = parent_id;
 	}
-	public Categories() {
+	public Categorys() {
 		super();
 	}
 	public int getId() {

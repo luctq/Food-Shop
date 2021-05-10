@@ -2,6 +2,7 @@ package food.Controller.Admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,6 +18,13 @@ public class ProductsListController extends BaseAdminController {
 			_mvShare.setViewName("redirect: dang-nhap");
 			return _mvShare;
 		}
+		_mvShare.addObject("productlist", productService.GetAllProducts());
+		_mvShare.setViewName("admin/showProduct");
+		return _mvShare;
+	}
+	@RequestMapping(value = "/quan-tri/xoa-san-pham{id}")
+	public ModelAndView DeleteCategory(@PathVariable long id) {
+		productService.DeleteProduct(id);
 		_mvShare.addObject("productlist", productService.GetAllProducts());
 		_mvShare.setViewName("admin/showProduct");
 		return _mvShare;

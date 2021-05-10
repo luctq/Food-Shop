@@ -18,7 +18,7 @@ public class AddProductController extends BaseAdminController {
 	private AdminProductServiceImpl productService = new AdminProductServiceImpl();
 	@RequestMapping(value = "/quan-tri/them-san-pham")
 	public ModelAndView addProduct() {
-		_mvShare.addObject("catelist", categoryService.GetDataCategories());
+		_mvShare.addObject("catelist", categoryService.GetDataCategorys());
 		_mvShare.setViewName("admin/addProduct");
 		return _mvShare;
 	}

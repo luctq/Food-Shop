@@ -17,5 +17,14 @@ public class AdminProductServiceImpl implements IAdminProductService {
 	public int addProduct(AdminProductsDto product) {
 		return productsDao.addProduct(product);
 	}
-
+	public AdminProductsDto GetProductByID(long id) {
+		return productsDao.GetProductByID(id);
+	}
+	
+	public void DeleteProduct(long id) {
+		productsDao.DeleteProduct(id);
+	}
+	public void UpdateProductByID(AdminProductsDto product) {
+		productsDao.UpdateProductByID(product);
+	}
 }

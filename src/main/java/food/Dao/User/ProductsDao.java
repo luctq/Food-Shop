@@ -1,5 +1,6 @@
 package food.Dao.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -8,6 +9,8 @@ import food.Dto.User.ProductsDto;
 import food.Dto.User.ProductsDtoMapper;
 @Repository
 public class ProductsDao extends BaseDao {
+	private final boolean Yes = true;
+	private final boolean No = false;
 	private StringBuffer SqlString() {
 		StringBuffer  sql = new StringBuffer();
 		sql.append("select ");
@@ -88,6 +91,29 @@ public class ProductsDao extends BaseDao {
 		ProductsDto product = _jdbcTemplate.queryForObject(sql.toString(), new ProductsDtoMapper());
 		return product;
 	} 
+	public List<ProductsDto> GetAllProductsSearch(String search) {
+		StringBuffer  sql = new StringBuffer();
+		sql.append("select ");
+		sql.append("p.id as id_products");
+		sql.append(", p.id_category");
+		sql.append(", p.name");
+		sql.append(", p.price");
+		sql.append(", p.sale");
+		sql.append(", p.title");
+		sql.append(", p.highlight");
+		sql.append(", p.new_product");
+		sql.append(", p.details");
+		sql.append(", p.img");
+		sql.append(", p.created_at");
+		sql.append(", p.updated_at ");
+		sql.append(", p.status ");
+		sql.append("from ");
+		sql.append("products as p ");
+		sql.append("where p.name like '%" + search + "%';");
+		List<ProductsDto> products = new ArrayList<ProductsDto>();
+		products = _jdbcTemplate.query(sql.toString(), new ProductsDtoMapper());
+		return products;
+	} 
  	public List<ProductsDto> GetDataProducts() {
 		String sql = SqlString().toString();
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
@@ -150,7 +176,7 @@ public class ProductsDao extends BaseDao {
 	public List<ProductsDto> GetAllProducts() {
 		StringBuffer  sql = new StringBuffer();
 		sql.append("select ");
-		sql.append("p.id as id_products ");
+		sql.append("p.id as id_products");
 		sql.append(", p.id_category");
 		sql.append(", p.name");
 		sql.append(", p.price");
@@ -159,18 +185,81 @@ public class ProductsDao extends BaseDao {
 		sql.append(", p.highlight");
 		sql.append(", p.new_product");
 		sql.append(", p.details");
-		sql.append(", c.id as id_color");
-		sql.append(", c.name as name_color");
-		sql.append(", c.code as code_color");
-		sql.append(", c.img");
+		sql.append(", p.img");
+		sql.append(", p.created_at");
+		sql.append(", p.updated_at ");
+		sql.append(", p.status ");
+		sql.append("from ");
+		sql.append("products as p;");
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sql.toString(), new ProductsDtoMapper());
+		return listProducts;
+	}
+	public List<ProductsDto> GetAllProductsPaginatesSortAscPrice(int start, int totalPage) {
+		StringBuffer  sql = new StringBuffer();
+		sql.append("select ");
+		sql.append("p.id as id_products");
+		sql.append(", p.id_category");
+		sql.append(", p.name");
+		sql.append(", p.price");
+		sql.append(", p.sale");
+		sql.append(", p.title");
+		sql.append(", p.highlight");
+		sql.append(", p.new_product");
+		sql.append(", p.details");
+		sql.append(", p.img");
 		sql.append(", p.created_at");
 		sql.append(", p.updated_at ");
 		sql.append(", p.status ");
 		sql.append("from ");
 		sql.append("products as p ");
-		sql.append("inner join ");
-		sql.append("colors as c ");
-		sql.append("on p.id = c.id_products;");
+		sql.append("order by p.price ");
+		sql.append("limit " + start + ", " + totalPage + ";");
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sql.toString(), new ProductsDtoMapper());
+		return listProducts;
+	}
+	public List<ProductsDto> GetAllProductsPaginatesSortDescPrice(int start, int totalPage) {
+		StringBuffer  sql = new StringBuffer();
+		sql.append("select ");
+		sql.append("p.id as id_products");
+		sql.append(", p.id_category");
+		sql.append(", p.name");
+		sql.append(", p.price");
+		sql.append(", p.sale");
+		sql.append(", p.title");
+		sql.append(", p.highlight");
+		sql.append(", p.new_product");
+		sql.append(", p.details");
+		sql.append(", p.img");
+		sql.append(", p.created_at");
+		sql.append(", p.updated_at ");
+		sql.append(", p.status ");
+		sql.append("from ");
+		sql.append("products as p ");
+		sql.append("order by p.price desc ");
+		sql.append("limit " + start + ", " + totalPage + ";");
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sql.toString(), new ProductsDtoMapper());
+		return listProducts;
+	}
+	public List<ProductsDto> GetAllProductsPaginatesSortName(int start, int totalPage) {
+		StringBuffer  sql = new StringBuffer();
+		sql.append("select ");
+		sql.append("p.id as id_products");
+		sql.append(", p.id_category");
+		sql.append(", p.name");
+		sql.append(", p.price");
+		sql.append(", p.sale");
+		sql.append(", p.title");
+		sql.append(", p.highlight");
+		sql.append(", p.new_product");
+		sql.append(", p.details");
+		sql.append(", p.img");
+		sql.append(", p.created_at");
+		sql.append(", p.updated_at ");
+		sql.append(", p.status ");
+		sql.append("from ");
+		sql.append("products as p ");
+		sql.append("order by p.name ");
+		sql.append("limit " + start + ", " + totalPage + ";");
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql.toString(), new ProductsDtoMapper());
 		return listProducts;
 	}

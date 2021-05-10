@@ -6,6 +6,17 @@ public class BillDetail {
 	private long id_bills;
 	private int quanty;
 	private double total;
+	private String productName;
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
 
 	public BillDetail() {
 		super();

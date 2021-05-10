@@ -13,6 +13,13 @@ public class EvaluateDtoMapper implements RowMapper<EvaluateDto> {
 		evaluate.setId_user(rs.getInt("id_user"));
 		evaluate.setContent(rs.getString("content"));
 		evaluate.setNum_star(rs.getInt("num_star"));
+		evaluate.setId(rs.getLong("id"));
+		evaluate.setUser(rs.getString("user"));
+		evaluate.setPassword(rs.getString("password"));
+		evaluate.setDisplay_name(rs.getString("display_name"));
+		evaluate.setAddress(rs.getString("address"));
+		evaluate.setPhone(rs.getString("phone"));
+		evaluate.setAvatar(rs.getString("avatar"));
 		return evaluate;
 	}
 }

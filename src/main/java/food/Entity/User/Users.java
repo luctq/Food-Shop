@@ -6,6 +6,20 @@ public class Users {
 	private String password;
 	private String display_name;
 	private String address;
+	private String phone;
+	private String avatar;
+	public String getAvatar() {
+		return avatar;
+	}
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public Users() {
 		super();
 	}

@@ -6,7 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import food.Dao.User.BaseDao;
 import food.Entity.Admin.Admin;
+import food.Entity.Admin.AdminCategorys;
 import food.Entity.Admin.MapperAdmin;
+import food.Entity.User.Users;
 @Repository
 public class AdminDao extends BaseDao {
 	public Admin GetAdminByAcc(Admin admin) {

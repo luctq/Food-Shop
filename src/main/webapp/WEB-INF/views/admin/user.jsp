@@ -27,7 +27,7 @@
 											<th scope="col">Email</th>
 											<th scope="col">Số điện thoại</th>
 											<th scope="col">Username</th>
-											<th scope="col">Ngày tạo</th>
+											<th scope="col">Địa chỉ</th>
 											<th scope="col">Hành động</th>
 
 										</tr>
@@ -38,7 +38,7 @@
 												<td scope="row">${user.id}</td>
 												<td>${user.display_name }</td>
 												<td>${user.user }</td>
-												<td>1</td>
+												<td>${user.phone }</td>
 												<td>${user.display_name }</td>
 												<td>${ user.address }</td>
 												<td>

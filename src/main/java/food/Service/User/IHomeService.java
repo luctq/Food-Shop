@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import food.Dto.User.ProductsDto;
-import food.Entity.User.Categories;
+import food.Entity.User.Categorys;
 import food.Entity.User.Menus;
 import food.Entity.User.Slides;
 @Service
@@ -15,7 +15,7 @@ public interface IHomeService {
 	public List<Slides> GetDataSlide();
 	
 	@Autowired
-	public List<Categories> GetDataCategories();
+	public List<Categorys> GetDataCategorys();
 	
 	@Autowired
 	public List<Menus> GetDataMenus();

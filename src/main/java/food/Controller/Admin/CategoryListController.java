@@ -15,14 +15,14 @@ public class CategoryListController extends BaseAdminController {
 	
 	@RequestMapping(value = "/quan-tri/the-loai")
 	public ModelAndView Catergory() {
-		_mvShare.addObject("catelist", categoryService.GetDataCategories());
+		_mvShare.addObject("catelist", categoryService.GetDataCategorys());
 		_mvShare.setViewName("admin/showCate");
 		return _mvShare;
 	}
 	@RequestMapping(value = "/quan-tri/xoa-cate{id}")
 	public ModelAndView DeleteCategory(@PathVariable int id) {
 		categoryService.DeleteCategory(id);
-		_mvShare.addObject("catelist", categoryService.GetDataCategories());
+		_mvShare.addObject("catelist", categoryService.GetDataCategorys());
 		return _mvShare;
 	}
 }

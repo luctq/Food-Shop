@@ -1,27 +1,89 @@
-<html>
-	<head>
-		<title>Tài khoản | Food.</title>
-		<link rel="stylesheet" href="../style/style.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head>
-	
-	<body> 
-		<header class="head-1">
-			<a href="index.html" class="logo">Food<span>.</span></a>
-			<div class="menuToggle" onclick="toggleMenu();"></div>
-			<ul class="navigation">
-				<li><a href="index.html#banner" onclick="toggleMenu();">Home</a></li>
-                <li><a href="search.html">Tìm kiếm</a></li>
-				<li><a href="index.html#about" onclick="toggleMenu();">About</a></li>
-				<li><a href="index.html#menu" onclick="toggleMenu();">Menu</a></li>
-				<li><a href="index.html#expert" onclick="toggleMenu();">Đầu bếp</a></li>
-				<li><a href="index.html#danhgia" onclick="toggleMenu();">Đánh giá</a></li>
-				<li><a href="#">Tài khoản</a></li>
-				<li><a href="#">Giỏ hàng</a></li>
-			</ul>
-		</header>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trang cá nhân</title>
+<link href="<c:url value="/assets/user/style/style.css" />"
+	rel="stylesheet" />
+<!-- boostrap -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
+			rel="stylesheet"> -->
+<link rel="stylesheet"
+	href="<c:url value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />">
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script> -->
+</head>
+<body>
+	<header class="head-1">
+		<a href="trang-chu" class="logo">Food<span>.</span></a>
+		<div class="menuToggle" onclick="toggleMenu();"></div>
+		<div class="right">
+			<c:if test="${ empty LoginInfo  }">
+				<ul class="navigation no-1">
+					<li><a href="trang-chu"">Trang chủ</a></li>
+					<li><a href="tim-kiem">Tìm kiếm</a></li>
+					<li><a href="san-pham"">Sản phẩm</a></li>
+					<c:if test="${ not empty Cart  }">
+					<li><a href="gio-hang">Giỏ hàng(${ TotalQuantyCart })</a></li>
+					</c:if>
+					<c:if test="${ empty Cart  }">
+					<li><a href="gio-hang">Giỏ hàng(0)</a></li>
+					</c:if>
+				</ul>
 
-        <div class="profile">
+				<ul class="navigation no-2">
+					<!-- phần sau khi đăng nhập là avt người dùng nè -->
+					<li class="user-part" onclick="toggleDropdown();"><a>
+							<p>Đăng nhập</p> <img
+							src="<c:url value="/assets/user/images/avt0.png" />"> <i
+							class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+						<div class="drop-down dropdown-menu">
+							<ul>
+								<li><a href="dang-nhap"> <i class="fa fa-user"
+										aria-hidden="true"></i> Đăng nhập
+								</a></li>
+							</ul>
+						</div></li>
+				</ul>
+			</c:if>
+			<c:if test="${ not empty LoginInfo  }">
+				<ul class="navigation no-1">
+					<li><a href="trang-chu"">Trang chủ</a></li>
+					<li><a href="tim-kiem">Tìm kiếm</a></li>
+					<li><a href="san-pham"">Sản phẩm</a></li>
+					<c:if test="${ not empty Cart  }">
+					<li><a href="gio-hang">Giỏ hàng(${ TotalQuantyCart })</a></li>
+					</c:if>
+					<c:if test="${ empty Cart  }">
+					<li><a href="gio-hang">Giỏ hàng(0)</a></li>
+					</c:if>
+				</ul>
+				<ul class="navigation no-2">
+					<li class="user-part" onclick="toggleDropdown();"><a>
+							<p>${ LoginInfo.display_name }</p> <img
+							src="<c:url value="/assets/user/images/${ LoginInfo.avatar }" />"> <i
+							class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+						<div class="drop-down">
+							<ul>
+								<li><a href="trang-ca-nhan${ LoginInfo.id }"> <i class="fa fa-user"
+										aria-hidden="true"></i> Tài khoản
+								</a></li>
+								<li><a href="dang-xuat"> <i class="fa fa-sign-out"
+										aria-hidden="true"></i> Đăng xuất
+								</a></li>
+							</ul>
+						</div></li>
+				</ul>
+			</c:if>
+		</div>
+	</header>
+<div class="profile">
             <div class="colunm-1">
                 <div class="imgB">
                     <img src="images/avt1.jpg">
@@ -41,26 +103,25 @@
                         <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
                     </div>
                     <div class="formB">
-                        <form>
+                        <form action = "sua-trang-ca-nhan" method = "POST">
                             <div class="row-01">
                                 <div class="label"><label for="cusName">Tên</label></div>
-                                <div class="input"><input type="text" id="cusName" value="User Name"></div>
+                                <div class="input"><input type="text" id="cusName" name = "display_name" value="${ LoginInfo.display_name }"></div>
                             </div>
                             <div class="row-01">
                                 <div class="label"><label for="cusMail">Email</label></div>
-                                <div class="input"><input type="email" id="cusMail" value="usermail@gmail.com"></div>
+                                <div class="input"><input type="email" id="cusMail" name = "user" value="${ LoginInfo.user }"></div>
                             </div>
                             <div class="row-01">
                                 <div class="label"><label for="cusAddress">Địa chỉ</label></div>
-                                <div class="input"><input type="text" id="cusMail" value=""></div>
+                                <div class="input"><input type="text" id="cusMail" name = "address" value="${ LoginInfo.address }"></div>
                             </div>
                             <div class="row-01">
                                 <div class="label"><label for="cusPhoneNumber">Số điện thoại</label></div>
-                                <div class="input"><input type="tel" id="cusPhoneNumber" value="0387534524"></div>
+                                <div class="input"><input type="tel" id="cusPhoneNumber" name = "phone" value="${ LoginInfo.phone }"></div>
                             </div>
                             <button type="submit">Lưu</button>
                         </form>
-                        
                     </div>
                 </div>
                 <div class="for-menu-2">
@@ -69,20 +130,15 @@
                         <p>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác</p>
                     </div>
                     <div class="formB">
-                        <form>
+                        <form action = "doi-mat-khau" method = "POST">
                             <div class="row-01">
                                 <div class="label"><label for="oldPW">Mật khẩu hiện tại</label></div>
-                                <div class="input"><input type="password" id="oldPW" value=""></div>
+                                <div class="input"><input type="password" id="oldPW" name = "oldPassword" ></div>
                             </div>
                             <div class="row-01">
                                 <div class="label"><label for="newPW">Mật khẩu mới</label></div>
-                                <div class="input"><input type="email" id="newPW" value=""></div>
+                                <div class="input"><input type="password" id="newPW" name = "newPassword"></div>
                             </div>
-                            <div class="row-01">
-                                <div class="label"><label for="newPWagain">Xác nhận mật khẩu</label></div>
-                                <div class="input"><input type="text" id="newPWagain" value=""></div>
-                            </div>
-                            
                             <button type="submit">Lưu</button>
                         </form>
                         
@@ -140,6 +196,11 @@
                     menu1content.classList.remove('active');
                 }
             })
+
+            function toggleDropdown() {
+				const dropdown = document.querySelector('.no-2 .drop-down');
+				dropdown.classList.toggle("active");
+			}
 		</script>
 
 	</body>

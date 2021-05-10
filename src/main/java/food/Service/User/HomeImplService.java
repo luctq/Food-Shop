@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import food.Dao.User.CategoriesDao;
+import food.Dao.User.CategorysDao;
 import food.Dao.User.MenusDao;
 import food.Dao.User.ProductsDao;
 import food.Dao.User.SlidesDao;
 import food.Dto.User.ProductsDto;
-import food.Entity.User.Categories;
+import food.Entity.User.Categorys;
 import food.Entity.User.Menus;
 import food.Entity.User.Slides;
 @Service
@@ -18,7 +18,7 @@ public class HomeImplService implements IHomeService {
 	@Autowired
 	private SlidesDao slidesDao;
 	@Autowired
-	private CategoriesDao categoriesDao;
+	private CategorysDao categorysDao;
 	@Autowired
 	private MenusDao menusDao;
 	@Autowired
@@ -30,9 +30,9 @@ public class HomeImplService implements IHomeService {
 		return slidesDao.GetDataSlide();
 	}
 	
-	public List<Categories> GetDataCategories() {
+	public List<Categorys> GetDataCategorys() {
 		// TODO Auto-generated method stub
-		return categoriesDao.GetDataCategories();
+		return categorysDao.GetDataCategorys();
 	}
 	
 	public List<Menus> GetDataMenus() {

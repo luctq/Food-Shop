@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import food.Dto.User.EvaluateDto;
 import food.Dto.User.EvaluateDtoMapper;
+import food.Entity.User.MapperUsers;
+import food.Entity.User.Users;
 
 @Repository
 public class EvaluateDao extends BaseDao {
@@ -30,5 +32,16 @@ public class EvaluateDao extends BaseDao {
 		List<EvaluateDto> list = new ArrayList<EvaluateDto>();
 		list = _jdbcTemplate.query(sql.toString(), new EvaluateDtoMapper());
 		return list;
+	}
+	public List<EvaluateDto> GetUserEvaluate(long id_product) {
+		StringBuffer  sql = new StringBuffer();
+		sql.append("select * ");
+		sql.append("from users ");
+		sql.append("inner join evaluate ");
+		sql.append("on users.id  = evaluate.id_user ");
+		sql.append("where evaluate.id_product = '" + id_product + "';");
+		List<EvaluateDto> list = _jdbcTemplate.query(sql.toString(), new EvaluateDtoMapper());
+		return list;
+		
 	}
 }

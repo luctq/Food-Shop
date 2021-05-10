@@ -1,5 +1,7 @@
 package food.Controller.Admin;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -7,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import food.Entity.Admin.AdminCategories;
+import food.Entity.Admin.AdminCategorys;
 import food.Service.Admin.AdminCategoryServiceImpl;
 
 @Controller
@@ -27,7 +29,7 @@ public class AddCategoryController extends BaseAdminController {
 		return _mvShare;
 	}
 	@RequestMapping(value = "quan-tri/them-cate", method = RequestMethod.POST )
-	public ModelAndView CreatAcc(@ModelAttribute("category") AdminCategories category) {
+	public ModelAndView CreatAcc(@ModelAttribute("category") AdminCategorys category) {
 		int count = categoryService.AddCategory(category);
 		if (count > 0) {
 			_mvShare.addObject("status", "them thanh cong");

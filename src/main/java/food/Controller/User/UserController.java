@@ -20,27 +20,25 @@ public class UserController extends BaseController {
 	@Autowired
 	AccountServiceImpl accountService = new AccountServiceImpl();
 	@RequestMapping(value = "/dang-ky", method = RequestMethod.POST )
-	public ModelAndView CreatAcc(@ModelAttribute("user") Users user) {
+	public ModelAndView CreatAcc(HttpServletRequest request, @ModelAttribute("user") Users user) {
+		 _mvShare.clear();
 		 String EMAIL_PATTERN = 
 		            "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
 		if (Pattern.matches(EMAIL_PATTERN, user.getUser()) == false) {
-			_mvShare.addObject("errorStatus", "Email không hợp lệ");
+			_mvShare.addObject("status", "Email không hợp lệ");
 			_mvShare.setViewName("redirect:dang-nhap#");
 			return _mvShare;
 		}
-//		if (accountService.checkAccExist(user)) {
-//			_mvShare.addObject("status", "Tài khoản đã tồn tại");
-//			_mvShare.setViewName("user/account/register");
-//			return _mvShare;
-//		}
 		int count = accountService.AddAccount(user);
 		if (count > 0) {
-			_mvShare.addObject("status", "�?ăng ký tài khoản thành công");
+			_mvShare.addObject("status", "Đăng ký tài khoản thành công");
+			_mvShare.setViewName("user/login");
+			return _mvShare;
 		} else {
-			_mvShare.addObject("errorStatus", "�?ăng ký tài khoản thất bại");
+			_mvShare.addObject("status", "Đăng ký tài khoản thất bại"); 
+			_mvShare.setViewName("redirect:" + request.getHeader("Referer"));
+			return _mvShare;
 		}
-		_mvShare.setViewName("user/login");
-		return _mvShare;
 	}
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.POST )
 	public ModelAndView Login(HttpSession session, @ModelAttribute("user") Users user) {
@@ -51,17 +49,21 @@ public class UserController extends BaseController {
 			session.setAttribute("LoginInfo", user);
 			return _mvShare;
 		} else {
-			_mvShare.setViewName("user/account/register");
+			_mvShare.addObject("status", "Mật khẩu hoặc tài khoản không đúng");
+			_mvShare.setViewName("user/login");
 			return _mvShare;
 		}
 	}
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
 	public ModelAndView viewLogin() {
+		_mvShare.clear();
 		_mvShare.setViewName("user/login");
 		return _mvShare;
 	}
 	@RequestMapping(value = "/dang-xuat", method = RequestMethod.GET )
 	public String Logout(HttpSession session, HttpServletRequest request) {
+		login = false;
+		session.removeAttribute("Cart");
 		session.removeAttribute("LoginInfo");
 		return "redirect:" + request.getHeader("Referer");
 	}
